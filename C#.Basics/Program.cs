@@ -6,16 +6,13 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given string yearText = "2023";, convert it using int.Parse(). Then given string badText = "abc";, use int.TryParse() to safely try converting it, and print "Invalid number" if it fails.
-            string yeartext = "2026";
-            int Year = int.Parse(yeartext);
-            WriteLine(yeartext);
-            string badText = "abc";
-            if (int.TryParse(badText, out int num))
-            {
-                WriteLine(num);
-            }
-            else { WriteLine("Invalid number"); }
+            #region Using the Book class above, print the result of calling ToString(), Equals() (compare book with itself), GetHashCode(), and GetType() on book.
+            Book Mybook = new Book { Title = "C#", Pages = 410 };
+            WriteLine(Mybook.ToString());
+            WriteLine(Mybook.Equals(Mybook));
+            WriteLine(Mybook.GetHashCode());
+            WriteLine(Mybook.GetType());
+
             #endregion
 
 
