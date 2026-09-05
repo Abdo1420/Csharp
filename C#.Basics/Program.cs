@@ -6,10 +6,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Create a Book class with a Title (string) and Pages (int). Create a Book object and store it in a variable of type object. Print it.
-            Book Mybook = new Book { Title = "C#", Pages = 250 };
-            WriteLine(Mybook);
-            #endregion 
+            #region Look at the line below. Is it a compile-time error, a runtime error, or a logical error? Fix it.
+           // copmile time error becouse cant write string in int type
+            int Pages = 464;
+            #endregion
 
         }
     }
