@@ -6,11 +6,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Declare an int pages = 300; then store it in a double variable without using a cast.
-            int Pages = 300;
-            double Douple_Pages = Pages;
-            WriteLine($"Douple Pages = {Douple_Pages}");
-            WriteLine($"Pages = {Pages}");
+            #region Declare a double price = 49.99; then convert it into an int using a cast.
+            double price = 49.99;
+            int Reale_price = (int)price;
+            WriteLine($"Price = {price}");
+            WriteLine($"Reale_price = {Reale_price}");
             #endregion
 
         }
