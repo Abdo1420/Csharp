@@ -6,11 +6,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Declare a double price = 49.99; then convert it into an int using a cast.
-            double price = 49.99;
-            int Reale_price = (int)price;
-            WriteLine($"Price = {price}");
-            WriteLine($"Reale_price = {Reale_price}");
+            #region Given string pagesText = "464";, convert it into an int using the Convert class.
+            string Pagse = "464";
+            int Reale_Pagse = Convert.ToInt32(Pagse);
+            WriteLine(Reale_Pagse);
             #endregion
 
         }
