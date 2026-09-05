@@ -6,18 +6,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write code that divides 10 by 0 inside a try block, catches the exception, prints "Cannot divide by zero", and then prints "Done" in a finally block.
-            try
-            {
-                int num1 = 10;
-                int num2 = 0;
-                WriteLine(num1 / num2);
-            }
-            catch (Exception ex)
-            {
-                WriteLine("Cannot divide by zero");
-            }
-            finally { WriteLine("Done"); }
+            #region Declare an int pages = 300; then store it in a double variable without using a cast.
+            int Pages = 300;
+            double Douple_Pages = Pages;
+            WriteLine($"Douple Pages = {Douple_Pages}");
+            WriteLine($"Pages = {Pages}");
             #endregion
 
         }
