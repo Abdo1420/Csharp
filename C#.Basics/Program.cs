@@ -10,11 +10,14 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Create a StringBuilder, Append() the text "Book List", then Append() " - Updated" onto the same object.Print the final result.
+            #region Using the StringBuilder from the question above, use Replace() to change "Book List" into "Library". Print the result.
             StringBuilder sb = new StringBuilder();
             sb.Append("Book List");
             sb.Append(" - Updated");
             WriteLine(sb);
+            sb.Replace("Book List", "Library");
+            WriteLine(sb);
+
             #endregion
 
         }
