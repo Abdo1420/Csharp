@@ -1,4 +1,6 @@
 ﻿
+using System.Security.Cryptography;
+using System.Threading.Channels;
 using static System.Console;
 namespace C_.Basics
 {
@@ -6,9 +8,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Create a Book class with a Title (string) and Pages (int). Create a Book object and store it in a variable of type object. Print it.
-            Book Mybook = new Book { Title = "C#", Pages = 250 };
-            WriteLine(Mybook);
+            #region Declare string title = "clean code";. Call title.ToUpper() and store it in a new variable upperTitle. Print both title and upperTitle to show that title did not change.
+            string title = "clean code";
+            string UpperTitle=title.ToUpper();
+            WriteLine(title);
+            WriteLine(UpperTitle);
             #endregion
 
         }
