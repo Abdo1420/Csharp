@@ -10,13 +10,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Using the StringBuilder from the question above, use Replace() to change "Book List" into "Library". Print the result.
-            StringBuilder sb = new StringBuilder();
-            sb.Append("Book List");
-            sb.Append(" - Updated");
-            WriteLine(sb);
-            sb.Replace("Book List", "Library");
-            WriteLine(sb);
+            #region Given string title = "Clean Code"; and int pages = 464;, build the sentence "Book: Clean Code,Pages: 464" using the + operator.() to change "Book List" into "Library". Print the result.
+            string title = "Clean Code";
+            int pages = 464;
+            WriteLine($"Book: {title}, Pages: {pages}");
 
             #endregion
 
