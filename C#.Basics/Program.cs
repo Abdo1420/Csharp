@@ -10,7 +10,7 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given string title = "Clean Code"; and int pages = 464;, build the sentence "Book: Clean Code,Pages: 464" using the + operator.() to change "Book List" into "Library". Print the result.
+            #region Build the same sentence as above, but using string interpolation ($"...").
             string title = "Clean Code";
             int pages = 464;
             WriteLine($"Book: {title}, Pages: {pages}");
