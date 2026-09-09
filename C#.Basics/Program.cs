@@ -1,5 +1,6 @@
 ﻿
 using System.Drawing;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Channels;
@@ -10,13 +11,21 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Using the same books array, print every title except "The Pragmatic Programmer" (skip it with continue, don't stop the loop).
+            #region Write a method PrintFirstBook() that prints the first book in the books array. If the array is empty,use return to exit the method early instead of printing anything.
             string[] Books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
-            for (int i = 0; i < Books.Length; i++)
+           void PrintFirstBook(string[] Books)
             {
-                if (i ==1) { continue; }
-                else { WriteLine(Books[i]); }
+                if (Books.Length == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    Write( Books[0]);
+                }
             }
+            PrintFirstBook(Books);
+
             #endregion
 
         }
