@@ -10,12 +10,9 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a do-while loop that prints "Checking book..." exactly 3 times. 
-            int times = 0;
-            do { WriteLine("Checking book...");
-                times++;
-            }
-            while (times < 3);
+            #region Using the same books array, use a foreach loop to print every book title. 
+            string[] Books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
+            foreach (string Book in Books) {WriteLine(Book); }
             #endregion
 
         }
