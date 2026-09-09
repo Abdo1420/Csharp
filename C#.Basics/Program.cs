@@ -10,9 +10,13 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Using the same books array, use a foreach loop to print every book title. 
+            #region Using the same books array, loop through it and print each title, but stop completely (break) once you reach "Refactoring".
             string[] Books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
-            foreach (string Book in Books) {WriteLine(Book); }
+            for (int i = 0; i < Books.Length; i++)
+            {
+                if (i < 2) { WriteLine(Books[i]); }
+                else { break; }
+            }
             #endregion
 
         }
