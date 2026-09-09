@@ -10,14 +10,12 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Using the same books array, use a while loop to print every book title. 
-            string[] Books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
-            int index = 0;
-            while (index<Books.Length)
-            {
-                WriteLine(Books[index]);
-                index++;
+            #region Write a do-while loop that prints "Checking book..." exactly 3 times. 
+            int times = 0;
+            do { WriteLine("Checking book...");
+                times++;
             }
+            while (times < 3);
             #endregion
 
         }
