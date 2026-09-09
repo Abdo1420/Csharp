@@ -10,12 +10,16 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given string title = "Clean Code"; and int pages = 464;, build the sentence "Book: Clean Code,Pages: 464" using the + operator.() to change "Book List" into "Library". Print the result.
-            string title = "Clean Code";
+            #region Given int pages = 464;, write an if / else statement that prints "Long Book" if pages is greater than 300, otherwise prints "Short Book".
             int pages = 464;
-            string Book = string.Format("Book: {0} Pages: {1}", title, pages);
-            WriteLine(Book);
-
+            if (pages > 300)
+            {
+                WriteLine("Long Book");
+            }
+            else
+            {
+                WriteLine("Short Book");
+            }
             #endregion
 
         }
