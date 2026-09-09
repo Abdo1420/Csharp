@@ -10,10 +10,13 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given string[] books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };, use a for loop to print each book with its position number, like 1.Clean Code.
+            #region Using the same books array, use a while loop to print every book title. 
             string[] Books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
-            for (int i = 0; i < Books.Length; i++) {
-                WriteLine(i + 1 +"."+ Books[i]);
+            int index = 0;
+            while (index<Books.Length)
+            {
+                WriteLine(Books[index]);
+                index++;
             }
             #endregion
 
