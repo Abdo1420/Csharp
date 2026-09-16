@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using static System.Console;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace C_.Basics
@@ -7,17 +8,21 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.  Call it and print pages afterward. How is the result different from question 5 ?
-                int pages = 400;
-            WriteLine(AddBonusPages(ref pages));
-            WriteLine(pages);
-            //لان هنا انا بصيت البراميتر باي ريفرانص بقا بيشاور علي الفاليو الحقيقي ف اي تغير هيسمع في الفاليو نفسه
+            #region Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a  new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Lengthafterward.
+            double[] price = { 10.0, 12.5 };
+            WriteLine(price.Length);
+            ReplaceArray(ref price);
+            WriteLine(price.Length); 
             #endregion
         }
-        public static int AddBonusPages(ref int  pages)
+        public static double ReplaceArray(ref double[] prices)
         {
-            pages += 50;
-            return pages;
+            double[] newPrices = new double[3];
+            prices = newPrices;
+            return prices[0];
+
+           
+            
         }
     }
 }
