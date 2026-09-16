@@ -7,13 +7,14 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method called PrintWelcomeMessage that takes no parameters and prints"Welcome to the Library!".Call it from Main.
-                        PrintWelcomeMessage(); 
+            #region Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with "Clean Code".
+            string title = "Clean Code";
+            PrintBookTitle(title); 
             #endregion
         }
-        public static void PrintWelcomeMessage()
+        public static void PrintBookTitle(string title)
         {
-            WriteLine("Welcome to the Library!");
+            WriteLine("Book title: " + title);
         }
     }
 }
