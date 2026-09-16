@@ -7,15 +7,16 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable int pages = 400; and print pages afterward. What do you expect to see, and why? 
-            int pages = 400;
-            WriteLine(AddBonusPages(pages)); 
+            #region Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect tosee, and why?
+            double[] prices = { 25.5, 40.0 };
+            WriteLine(ApplyDiscount(prices));  
             #endregion
+
         }
-        public static int AddBonusPages(int pages)
+        public static double ApplyDiscount(double[] prices)
         {
-            pages += 50;
-            return pages;
+            prices[0] -= 5;
+            return prices[0];
         }
     }
 }
