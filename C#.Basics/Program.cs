@@ -8,17 +8,20 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call it once with only a title, and once passing both a title and pages.
-                       
-            PrintBookInfo(pages:650,title:"C Sharp");
+            #region Write a method PrintAllTitles(params string[] titles) that prints each title on its own line. Call it with three book titles.
+            PrintAllTitles("C sharp", "Java", "CPP");
+
             #endregion
 
         }
-        public static void PrintBookInfo(string title, int pages = 300)
+        public static void PrintAllTitles(params string[] titles)
         {
 
-            WriteLine($"Book: {title}, Pages: {pages}");
-
+      
+            foreach (string title in titles)
+            {
+                WriteLine(title);
+            }
 
         }
     }
