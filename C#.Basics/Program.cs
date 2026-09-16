@@ -6,20 +6,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            
-                if (Books.Length == 0)
-                {
-                    return;
-                }
-                else
-                {
-                    Write( Books[0]);
-                }
-            }
-            PrintFirstBook(Books);
-
+            #region Create a one-dimensional array double[] prices with the values 25.5, 40.0, 33.75. Print the second price(index 1).
+            double[] prices = { 25.5, 40.0, 33.75 };
+            WriteLine(prices[1]); 
             #endregion
-
         }
     }
 }
