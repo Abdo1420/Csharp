@@ -7,17 +7,17 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect tosee, and why?
-            double[] prices = { 25.5, 40.0 };
-            WriteLine(ApplyDiscount(prices));
-            WriteLine(prices[0]);
-            //الناتج هنا واحد لان الارراي اصلا ريفرانس الاتنين بشاورو عللي نفس الفاليو
+            #region Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.  Call it and print pages afterward. How is the result different from question 5 ?
+                int pages = 400;
+            WriteLine(AddBonusPages(ref pages));
+            WriteLine(pages);
+            //لان هنا انا بصيت البراميتر باي ريفرانص بقا بيشاور علي الفاليو الحقيقي ف اي تغير هيسمع في الفاليو نفسه
             #endregion
         }
-        public static double ApplyDiscount(double[] prices)
+        public static int AddBonusPages(ref int  pages)
         {
-            prices[0] -= 5;
-            return prices[0];
+            pages += 50;
+            return pages;
         }
     }
 }
