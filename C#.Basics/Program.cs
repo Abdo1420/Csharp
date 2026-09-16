@@ -9,8 +9,8 @@ namespace C_.Basics
         static void Main(string[] args)
         {
             #region Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call it once with only a title, and once passing both a title and pages.
-                        PrintBookInfo("Clean Code");
-            PrintBookInfo("C Sharp", 450); 
+                       
+            PrintBookInfo(pages:650,title:"C Sharp");
             #endregion
 
         }
