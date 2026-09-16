@@ -7,14 +7,15 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with "Clean Code".
-            string title = "Clean Code";
-            PrintBookTitle(title); 
+            #region Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable int pages = 400; and print pages afterward. What do you expect to see, and why? 
+            int pages = 400;
+            WriteLine(AddBonusPages(pages)); 
             #endregion
         }
-        public static void PrintBookTitle(string title)
+        public static int AddBonusPages(int pages)
         {
-            WriteLine("Book title: " + title);
+            pages += 50;
+            return pages;
         }
     }
 }
