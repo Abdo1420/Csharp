@@ -8,18 +8,26 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a  new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Lengthafterward.
-            double[] price = { 10.0, 12.5 };
-            WriteLine(price.Length);
-            ReplaceArray(ref price);
-            WriteLine(price.Length); 
+            #region Write a method bool TryGetPrice(string title, out double price) that returns true and sets price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0.Call it1and print the price if found
+            string title = "Clean Code";
+            double price = 0;
+            WriteLine(TryGetPrice(title, out price));
+            WriteLine(price); 
             #endregion
         }
-        public static double ReplaceArray(ref double[] prices)
+        public static bool TryGetPrice(string title, out double price)
         {
-            double[] newPrices = new double[3];
-            prices = newPrices;
-            return prices[0];
+            
+          if (title== "Clean Code" )
+            {
+                price = 25.5;
+                return true;
+            }
+            else
+            {
+                price = 0;
+                return false;
+            }
 
            
             
