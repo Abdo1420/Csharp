@@ -7,11 +7,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Using the Genre enum above, print the underlying int value of Genre.Fiction, Genre.NonFiction, and Genre.Science by casting each to int.
+            #region Given int genreNumber = 1;, cast it into a Genre value and print the result. 
 
-            WriteLine((int)Genre.Fiction); 
-            WriteLine((int)Genre.NonFiction); 
-            WriteLine((int)Genre.Science); 
+            int genreNumber = 1;
+            Genre genre = (Genre)genreNumber;
+            WriteLine(genre); 
             #endregion
 
         }
