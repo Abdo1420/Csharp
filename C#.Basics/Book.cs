@@ -7,7 +7,8 @@ namespace C_.Basics
 {
     internal class Book
     {
-        private string password="secret";
-       
+        internal int copiesInStock = 5;
+
+
     }
 }

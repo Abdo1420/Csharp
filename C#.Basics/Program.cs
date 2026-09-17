@@ -6,12 +6,12 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Add a private string password = "secret"; field to a Book class. Try to print it from Main (outside the class). What happens, and why?
+            #region Add an internal int copiesInStock = 5; field to Book. Print it from Main. Does it compile? Why?
             Book book = new Book();
-            WriteLine(book.password);
-            //ايرور لا يمكن طباعة الباسورد عشان البرايفت بتخلينا ناكسيس علي الفاليو في حدود الكلاس فقط 
-            #endregion
+            WriteLine(book.copiesInStock);
+            //الكود اشتغل بنجاح لان حدود انتيرنال هي البروجيكت بالكامل وليس الكلاس فقط
 
+            #endregion
         }
     }
 }
