@@ -7,11 +7,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given int genreNumber = 1;, cast it into a Genre value and print the result. 
+            #region Given Genre genre = Genre.Fiction;, convert it into a string using ToString() and print it.
 
-            int genreNumber = 1;
-            Genre genre = (Genre)genreNumber;
-            WriteLine(genre); 
+            Genre genre = Genre.Fiction;
+            string genre_string= genre.ToString();
+            WriteLine(genre_string); 
             #endregion
 
         }
