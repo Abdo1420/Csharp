@@ -7,11 +7,12 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Given Genre genre = Genre.Fiction;, convert it into a string using ToString() and print it.
+            #region Given string genreText = "Science";, convert it into a Genre value using Enum.Parse() and print the result.
 
-            Genre genre = Genre.Fiction;
-            string genre_string= genre.ToString();
-            WriteLine(genre_string); 
+            string genreText = "Science";
+           
+            Genre genre = Enum.Parse<Genre>( genreText);
+            WriteLine(genre);
             #endregion
 
         }
