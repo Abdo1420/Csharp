@@ -7,7 +7,7 @@ namespace C_.Basics
 {
     internal class Book
     {
-        internal int copiesInStock = 5;
+        public string? Title;
 
 
     }
