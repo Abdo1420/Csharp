@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static System.Console;
 
 namespace C_.Basics
 {
-    internal class Book
+    internal enum Genre
     {
-
-
-        internal Genre genre = Genre.Science;
-
+        Fiction,
+        NonFiction,
+        Science,
     }
 }

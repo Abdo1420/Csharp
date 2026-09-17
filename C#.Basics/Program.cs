@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using static System.Console;
 namespace C_.Basics
 {
@@ -6,10 +7,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Add a public string Title; field to Book. Set it and print it from Main.
+            #region Declare an enum Genre { Fiction, NonFiction, Science }. Add a Genre property to Book, assign it Genre.Science, and print it.
             Book book = new Book();
-            book.Title = "C Sharp";
-            WriteLine(book.Title); 
+        
+            WriteLine(book.genre); 
             #endregion
 
         }
