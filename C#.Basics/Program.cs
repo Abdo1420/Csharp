@@ -7,10 +7,11 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Declare an enum Genre { Fiction, NonFiction, Science }. Add a Genre property to Book, assign it Genre.Science, and print it.
-            Book book = new Book();
-        
-            WriteLine(book.genre); 
+            #region Using the Genre enum above, print the underlying int value of Genre.Fiction, Genre.NonFiction, and Genre.Science by casting each to int.
+
+            WriteLine((int)Genre.Fiction); 
+            WriteLine((int)Genre.NonFiction); 
+            WriteLine((int)Genre.Science); 
             #endregion
 
         }

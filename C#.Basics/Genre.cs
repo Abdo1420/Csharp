@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    internal enum Genre
+    internal enum Genre:int
     {
         Fiction,
         NonFiction,

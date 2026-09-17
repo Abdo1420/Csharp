@@ -9,7 +9,7 @@ namespace C_.Basics
     {
 
 
-        internal Genre genre = Genre.Science;
+        internal Genre genre;
 
     }
 }
