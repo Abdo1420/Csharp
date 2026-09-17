@@ -6,9 +6,10 @@ namespace C_.Basics
     {
         static void Main(string[] args)
         {
-            #region Create a Book class with a Title (string) and Pages (int). Create a Book object and store it in a variable of type object. Print it.
-            Book Mybook = new Book { Title = "C#", Pages = 250 };
-            WriteLine(Mybook);
+            #region Add a private string password = "secret"; field to a Book class. Try to print it from Main (outside the class). What happens, and why?
+            Book book = new Book();
+            WriteLine(book.password);
+            //ايرور لا يمكن طباعة الباسورد عشان البرايفت بتخلينا ناكسيس علي الفاليو في حدود الكلاس فقط 
             #endregion
 
         }

@@ -7,11 +7,7 @@ namespace C_.Basics
 {
     internal class Book
     {
-        public string Title;
-        public int Pages =0;
-        public override string ToString()
-        {
-            return $"Title= {Title}, Pages= {Pages}";
-        }
+        private string password="secret";
+       
     }
 }
