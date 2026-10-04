@@ -37,6 +37,102 @@ namespace C_.Basics
             WriteLine(deliveryAddress.City);
             #endregion
 
+            #region a. Create a DeliveryCenter
+            DeliveryCenter deliveryCenter = new DeliveryCenter();
+            #endregion
+
+            #region b)Read data for three shipments from the user.
+            for (int i = 1; i <= 3; i++)
+            {
+                WriteLine($"Enter Ditels for {i} Shipment");
+                WriteLine("Enter TrackingCode");
+                string? trackingCode = ReadLine();
+                WriteLine("Enter description");
+                string? description = ReadLine();
+                WriteLine("Enter Weight (kg)");
+                decimal weight = 0;
+                while (!decimal.TryParse(ReadLine(), out weight) || weight <= 0)
+                {
+                    WriteLine("Invalid input. Please enter a positive number for weight.");
+                }
+                WriteLine("Enter DeliveryFee");
+                decimal deliveryFee = 0;
+                while (!decimal.TryParse(ReadLine(), out deliveryFee) || deliveryFee < 0)
+                {
+                    WriteLine("Invalid input. Please enter a valid number for delivery fee.");
+                }
+                WriteLine("Enter Address Ditels");
+                WriteLine("Enter buildingNumber");
+                int buildingNumber = 0;
+                while (!int.TryParse(ReadLine(), out buildingNumber) || buildingNumber <= 0)
+                {
+                    WriteLine("Invalid input. Please enter a positive number for building number.");
+                }
+                WriteLine("Enter Street");
+                string? street = ReadLine();
+                WriteLine("Enter City");
+                string? city = ReadLine();
+#endregion
+
+            #region c)Create each Shipment and add it to the DeliveryCenter
+                DeliveryAddress deliveryAddress1 = new DeliveryAddress(city, street, buildingNumber);
+                Shipment shipment = new Shipment(trackingCode, description, weight, deliveryFee, deliveryAddress1);
+                bool isAdded = deliveryCenter.AddShipment(shipment);
+                if (!isAdded)
+                {
+                    WriteLine("Failed to add shipment.");
+                }
+                else
+                {
+                    WriteLine("Shipment added successfully.");
+                }
+            }
+                #endregion
+
+            #region d) Print the three shipments using the integer indexer.
+            for (int i = 0; i < 3; i++)
+            {
+                Shipment shipment = deliveryCenter[i];
+                WriteLine($"Shipment {i + 1}:");
+                WriteLine($"Tracking Code: {shipment.TrackingCode}");
+                WriteLine($"Description: {shipment.Description}");
+                WriteLine($"Weight: {shipment.Weight} kg");
+                WriteLine($"Delivery Fee: {shipment.DeliveryFee}");
+                WriteLine($"Delivery Address: {shipment.Description}");
+            }
+            #endregion
+
+            #region e)Ask the user to enter a tracking code.
+            WriteLine("Enter a tracking code to search: ");
+            string? searchCode = ReadLine();
+            #endregion
+
+            #region f)Search for the shipment using the string indexer.
+            Shipment? foundShipment = deliveryCenter[searchCode];
+            #endregion
+
+            #region g) Print the shipment if found; otherwise print:Shipment not found. 
+            if (foundShipment.HasValue)
+            {
+                foundShipment.Value.PrintShipment();
+            }
+            else
+            {
+                WriteLine("Shipment not found.");
+            }
+            #endregion
+
+            #region h)Demonstrate the DeliveryAddress struct copy behavior.
+            DeliveryAddress addr1 = new DeliveryAddress("Cairo", "El-Tahrir St", 10);
+            DeliveryAddress addr2 = addr1;
+
+            addr2.Street = "Makram Ebeid St";
+
+            Console.WriteLine($"Original Address (addr1): Building {addr1.BuildingNumber}, {addr1.Street}, {addr1.City}");
+            Console.WriteLine($"Copied & Modified (addr2): Building {addr2.BuildingNumber}, {addr2.Street}, {addr2.City}");
+            //النتيجة هتكون ان العنوان الاصلي مش هيتغير لان الستركت من نوع فاليو والنسخة الي اتعملت اتغيرت بس مش العنوان الاصلي
+            #endregion
         }
+
     }
 }
