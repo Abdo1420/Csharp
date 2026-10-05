@@ -20,16 +20,16 @@ namespace C_.Basics
 
             #region Question 2
             #region a) Which class is the parent class?
-
+            //class Shipment is the parent class.
             #endregion
             #region b) Which class is the child class?
-
+            //class ExpressShipment is the child class.
             #endregion
             #region c) What members are inherited by ExpressShipment?
-
+            //string TrackingCode;
             #endregion
             #region d) Why is inheritance better than duplicating the same code in multiple classes?
-
+            //because inheritance allows for code reusability and reduces code duplication, making the code easier to maintain and less error-prone. Duplicating code in multiple classes can lead to inconsistencies and makes it harder to update or fix bugs in the code.
             #endregion
 
             #endregion

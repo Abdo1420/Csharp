@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    public struct DeliveryCenter
+    public class DeliveryCenter
     {
         #region atributs
         private Shipment[] array;

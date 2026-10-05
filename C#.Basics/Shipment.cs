@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    public struct Shipment
+    public class Shipment
     {
         #region constractors
         public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
