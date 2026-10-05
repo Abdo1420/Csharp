@@ -9,7 +9,12 @@ namespace C_.Basics
         #region atributs
         private Shipment[] array;
         #endregion
-
+        #region constractor
+        public DeliveryCenter()
+        {
+            array = new Shipment[10];
+        } 
+        #endregion
         #region indixer
         public Shipment this[int position]
         {

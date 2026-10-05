@@ -29,12 +29,12 @@ namespace C_.Basics
             #endregion
 
             #region Create one DeliveryAddress value, copy it into a second variable, modify the copy, and print both values to prove that the original did not change.
-            DeliveryAddress deliveryAddress = new DeliveryAddress("Cairo", "arab", 14);
-            DeliveryAddress deliveryAddress02 = deliveryAddress;
-            deliveryAddress.GetFullAddress();
-            deliveryAddress.GetFullAddress();
-            deliveryAddress02.City = "alex";
-            WriteLine(deliveryAddress.City);
+            //DeliveryAddress deliveryAddress = new DeliveryAddress("Cairo", "arab", 14);
+            //DeliveryAddress deliveryAddress02 = deliveryAddress;
+            //deliveryAddress.GetFullAddress();
+            //deliveryAddress.GetFullAddress();
+            //deliveryAddress02.City = "alex";
+            //WriteLine(deliveryAddress.City);
             #endregion
 
             #region a. Create a DeliveryCenter
@@ -98,7 +98,6 @@ namespace C_.Basics
                 WriteLine($"Description: {shipment.Description}");
                 WriteLine($"Weight: {shipment.Weight} kg");
                 WriteLine($"Delivery Fee: {shipment.DeliveryFee}");
-                WriteLine($"Delivery Address: {shipment.Description}");
             }
             #endregion
 
@@ -112,7 +111,7 @@ namespace C_.Basics
             #endregion
 
             #region g) Print the shipment if found; otherwise print:Shipment not found. 
-            if (foundShipment.HasValue)
+            if (!foundShipment.Equals(default(Shipment?)))
             {
                 foundShipment.Value.PrintShipment();
             }
@@ -123,13 +122,13 @@ namespace C_.Basics
             #endregion
 
             #region h)Demonstrate the DeliveryAddress struct copy behavior.
-            DeliveryAddress addr1 = new DeliveryAddress("Cairo", "El-Tahrir St", 10);
-            DeliveryAddress addr2 = addr1;
+            //DeliveryAddress addr1 = new DeliveryAddress("Cairo", "El-Tahrir St", 10);
+            //DeliveryAddress addr2 = addr1;
 
-            addr2.Street = "Makram Ebeid St";
+            //addr2.Street = "Makram Ebeid St";
 
-            Console.WriteLine($"Original Address (addr1): Building {addr1.BuildingNumber}, {addr1.Street}, {addr1.City}");
-            Console.WriteLine($"Copied & Modified (addr2): Building {addr2.BuildingNumber}, {addr2.Street}, {addr2.City}");
+            //Console.WriteLine($"Original Address (addr1): Building {addr1.BuildingNumber}, {addr1.Street}, {addr1.City}");
+            //Console.WriteLine($"Copied & Modified (addr2): Building {addr2.BuildingNumber}, {addr2.Street}, {addr2.City}");
             //النتيجة هتكون ان العنوان الاصلي مش هيتغير لان الستركت من نوع فاليو والنسخة الي اتعملت اتغيرت بس مش العنوان الاصلي
             #endregion
         }
