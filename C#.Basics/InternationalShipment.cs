@@ -54,5 +54,13 @@ namespace C_.Basics
             CustomsFee = customsFee;
         }
         #endregion
+        #region methods
+        public override void PrintShipment()
+        {
+            base.PrintShipment();
+            Console.WriteLine($"Destination Country: {DestinationCountry}");
+            Console.WriteLine($"Customs Fee: {CustomsFee}");
+        }
+        #endregion
     }
 }

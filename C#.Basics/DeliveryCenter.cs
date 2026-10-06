@@ -91,13 +91,10 @@ namespace C_.Basics
            
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] != default)
+               if(array[i] != null)
                 {
                     array[i].PrintShipment();
-                }
-                else
-                {
-                    break;
+                   
                 }
             }
         }
