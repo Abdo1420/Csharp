@@ -9,7 +9,7 @@ namespace C_.Basics
         public string City { get; set; }
         public string Street { get; set; }
         public int BuildingNumber { get; set; }
-        public DeliveryAddress(string city, string street, int buildingNumber)
+        public DeliveryAddress(int buildingNumber, string street, string city)
         {
             City = city;
             Street = street;

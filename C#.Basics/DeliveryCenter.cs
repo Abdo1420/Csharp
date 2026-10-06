@@ -7,14 +7,23 @@ namespace C_.Basics
     public class DeliveryCenter
     {
         #region atributs
+        private string CenterName;
         private Shipment[] array;
         #endregion
+
         #region constractor
         public DeliveryCenter()
         {
-            array = new Shipment[10];
+            CenterName = "Unknown Center";
+            array = new Shipment[20];
+        }
+        public DeliveryCenter(string centerName)
+        {
+            CenterName = centerName;
+            array = new Shipment[20];
         } 
         #endregion
+
         #region indixer
         public Shipment this[int position]
         {
@@ -45,15 +54,17 @@ namespace C_.Basics
                     
                   
                 }
-                return default;
+                return null;
             }
         }
         #endregion
+
+        #region methods
         public bool AddShipment(Shipment newShipment)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i].TrackingCode == default)
+                if (array[i] == default && newShipment != default)
                 {
                     array[i] = newShipment;
                     return true;
@@ -61,5 +72,35 @@ namespace C_.Basics
             }
             return false;
         }
+        public bool RemoveShipment(string trackingCode) 
+        { 
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i].TrackingCode == trackingCode)
+                {
+                    array[i] = null;
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void PrintAllShipments()
+        {
+            Console.WriteLine($"Delivery Center: {CenterName}");
+            Console.WriteLine("-------------------------------");
+           
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != default)
+                {
+                    array[i].PrintShipment();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        #endregion
     }
 }
