@@ -34,14 +34,15 @@ namespace C_.Basics
             #endregion
 
             #region 1.Create a Driver.
-
+            Driver driver = new Driver("Ahmed Mohamed");
 
             #endregion
             #region 2.Create a DeliveryCenter.
             DeliveryCenter deliveryCenter = new DeliveryCenter("Delivery Center");
             #endregion
             #region 3.Assign the Driver to the DeliveryCenter.
-
+            driver.AssignedCenter = deliveryCenter;
+            
             #endregion
             #region 4.Create one StandardShipment.
             Shipment? standardShipment = new StandardShipment("SH001", "laptop", 2, 80);
@@ -59,6 +60,9 @@ namespace C_.Basics
             deliveryCenter.AddShipment(internationalShipment);
             #endregion
             #region 8.Print all shipments.
+            
+           deliveryCenter.PrintCenterInfo();
+            WriteLine($"Driver Name: {driver.Name}");
             deliveryCenter.PrintAllShipments();
             #endregion
             #region 9.Call DeliveryHelper.PrintShipmentDetails() for each shipment.

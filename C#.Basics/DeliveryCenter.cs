@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace C_.Basics
 {
     public class DeliveryCenter
@@ -86,9 +87,7 @@ namespace C_.Basics
         }
         public void PrintAllShipments()
         {
-            Console.WriteLine($"Delivery Center: {CenterName}");
-            Console.WriteLine("-------------------------------");
-           
+            
             for (int i = 0; i < array.Length; i++)
             {
                if(array[i] != null)
@@ -97,6 +96,12 @@ namespace C_.Basics
                    
                 }
             }
+        }
+        public void PrintCenterInfo()
+        {
+            Console.WriteLine("==========================================");
+            Console.WriteLine($"Center Name: {CenterName}");
+            Console.WriteLine("==========================================");
         }
         #endregion
     }
