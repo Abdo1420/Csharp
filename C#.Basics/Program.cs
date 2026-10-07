@@ -7,23 +7,26 @@ namespace C_.Basics
         static void Main(string[] args)
         {
             #region Question 1
-            #region What is Abstraction in Object-Oriented Programming?
-            //هو تجريد البروبرتي او الميثود من التفاصيل المعقدة واظهار اسمها فقط وماذا تعمل اي تجريدها من الامبلمنتيشن
+            #region a)  What is the difference between Method Overloading and Method Overriding?
+            //overloading: هو تعريق ميثود بنفس الاسم ولاكن براميتر مختلف في العدد او الترتيب ويمكن تعريفها في نفس الكلاس 
+            //overriding: هو تعريف ميثود بنفس الاسم ونفس البراميتر في كلاس فرعي ويجب ان تكون الميثود في الكلاس الاب virtual
             #endregion
-            #region Why is abstraction considered one of the four pillars of OOP?
-            //لانه يخفي التفاصيل الكثيرة والمعقدة ويسهل التعامل مع الكود المعقد ويسهل عملية التحديث في اي جزء في الكود
+            #region b)  What is the difference between Static Binding and Dynamic Binding?
+            //static binding: هو ربط بين الميثود والكلاس في وقت كتابة الكود
+            //dynamic binding: هو ربط بين الميثود والكلاس عند تشغلي البرنامج
             #endregion
             #endregion
 
             #region Question 2
-            #region a)  What is the difference between an Abstract Class and an Interface?
-            // 
+            #region a) What is the purpose of the sealed keyword when applied to a class?
+            //تجعل الكلاس لا يورث مرة اخري من قبل كلاس اخر فرعي 
             #endregion
-            #region b) When would you choose an Interface instead of an Abstract Class?
-            //
+            #region b) What is the difference between a sealed class and a sealed method?
+            //sealed class: هو الكلاس الذي لا يمكن وراثته مرة اخري عبر كلاس فرعي عند استخدام الكاي ورد 
+            //sealed method: هي الميثود الذي لا يمكن تعريفها في كلاس اخر
             #endregion
-            #region c) Can a class inherit from multiple abstract classes? Can it implement multiple interfaces?
-            // 
+            #region c)  Can a sealed method be overridden? Why?
+            //لا يمكن override للميثود المعلنة ب sealed لانها لا يمكن تعريفها في كلاس اخر
 
             #endregion
 
@@ -91,5 +94,6 @@ namespace C_.Basics
             #endregion
 
         }
+
     }
 }
