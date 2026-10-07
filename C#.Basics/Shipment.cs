@@ -11,7 +11,7 @@ namespace C_.Basics
         #region filds
         private string trackingCode;
         private string description;
-        private decimal weight;
+        private double weight;
         private decimal deliveryFee;
         #endregion
 
@@ -49,7 +49,7 @@ namespace C_.Basics
                     description = value;
             }
         }
-        public decimal Weight
+        public double Weight
         {
             get
             {
@@ -75,14 +75,14 @@ namespace C_.Basics
         {
             get
             {
-                return  DeliveryFee + (Weight * 5);
+                return  DeliveryFee + (Convert.ToDecimal(Weight * 5));
             }
         }
 
         #endregion
         #region constractors
         
-        public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
+        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
         {
             TrackingCode = trackingCode;
             Description = description;
@@ -106,9 +106,20 @@ namespace C_.Basics
             Console.WriteLine($"Weight: {Weight} kg");
             Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
             Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
-            Console.WriteLine("-----------------------------");
+            
             
         }
+        public void UpdateWeight(   double newWeight)
+        {
+            Weight = newWeight;
+        }
+        public void UpdateWeight(double newWeight,bool additionalWeight)
+        {
+            if (additionalWeight)
+                Weight += newWeight;
+          
+        }
+
         #endregion
 
     }

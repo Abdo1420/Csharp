@@ -8,118 +8,52 @@ namespace C_.Basics
         {
             #region Question 1
             #region a)  What is the difference between Method Overloading and Method Overriding?
-            //
+            //overloading: هو تعريق ميثود بنفس الاسم ولاكن براميتر مختلف في العدد او الترتيب ويمكن تعريفها في نفس الكلاس 
+            //overriding: هو تعريف ميثود بنفس الاسم ونفس البراميتر في كلاس فرعي ويجب ان تكون الميثود في الكلاس الاب virtual
             #endregion
             #region b)  What is the difference between Static Binding and Dynamic Binding?
-            //
+            //static binding: هو ربط بين الميثود والكلاس في وقت كتابة الكود
+            //dynamic binding: هو ربط بين الميثود والكلاس عند تشغلي البرنامج
             #endregion
             #endregion
 
             #region Question 2
             #region a) What is the purpose of the sealed keyword when applied to a class?
-            //
+            //تجعل الكلاس لا يورث مرة اخري من قبل كلاس اخر فرعي 
             #endregion
             #region b) What is the difference between a sealed class and a sealed method?
-            //
+            //sealed class: هو الكلاس الذي لا يمكن وراثته مرة اخري عبر كلاس فرعي عند استخدام الكاي ورد 
+            //sealed method: هي الميثود الذي لا يمكن تعريفها في كلاس اخر
             #endregion
             #region c)  Can a sealed method be overridden? Why?
-            //
-           
-            #endregion
-            
+            //لا يمكن override للميثود المعلنة ب sealed لانها لا يمكن تعريفها في كلاس اخر
 
             #endregion
 
-            #region 1.Create a DeliveryCenter.2.Read the center name from the user.
-            WriteLine("Enter the name of the delivery center:");
-            string? centerName = ReadLine();
-            DeliveryCenter deliveryCenter = new DeliveryCenter(centerName);
-            #endregion
-            #region 3.Create one StandardShipment.4.Create one ExpressShipment.5.Create one InternationalShipment.
-            Shipment? standardShipment= null;
-            Shipment? expressShipment= null;
-            Shipment?   internationalShipment= null;
-            #endregion
-            #region 6.Read all shipment data from the user.
-            for (int i = 0; i < 3; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        {
-                            WriteLine("Enter the tracking code for the standard shipment:");
-                            string? trackingCode = ReadLine();
-                            WriteLine("Enter the description for the standard shipment:");
-                            string? description = ReadLine();
-                            WriteLine("Enter the weight for the standard shipment:");
-                            decimal weight = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the delivery fee for the standard shipment:");
-                            decimal deliveryFee = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the destination for the standard shipment:");
-                            WriteLine("Enter the building number:");
-                            int buildingNumber = Convert.ToInt32(ReadLine());
-                            WriteLine("Enter the street:");
-                            string? street = ReadLine();
-                            WriteLine("Enter the city:");
-                            string? city = ReadLine();
-                            DeliveryAddress destination = new DeliveryAddress(buildingNumber, street, city);
-                            standardShipment= new StandardShipment(trackingCode, description, weight, deliveryFee, destination);
-                            break;
-                        }
-                    case 1:
-                        {
-                            WriteLine("Enter the tracking code for the expressShipment shipment:");
-                            string? trackingCode = ReadLine();
-                            WriteLine("Enter the description for the expressShipment shipment:");
-                            string? description = ReadLine();
-                            WriteLine("Enter the weight for the expressShipment shipment:");
-                            decimal weight = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the delivery fee for the expressShipment shipment:");
-                            decimal deliveryFee = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the extra fee for the express shipment:");
-                            decimal extraFee = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the destination for the expressShipment shipment:");
-                            WriteLine("Enter the building number:");
-                            int buildingNumber = Convert.ToInt32(ReadLine());
-                            WriteLine("Enter the street:");
-                            string? street = ReadLine();
-                            WriteLine("Enter the city:");
-                            string? city = ReadLine();
-                            DeliveryAddress destination = new DeliveryAddress(buildingNumber, street, city);
-                             expressShipment = new ExpressShipment(trackingCode, description, weight, deliveryFee, destination, extraFee);
-                            break;
-                        }
-                    case 2:
-                        {
-                            WriteLine("Enter the tracking code for the internationalShipment shipment:");
-                            string? trackingCode = ReadLine();
-                            WriteLine("Enter the description for the internationalShipment shipment:");
-                            string? description = ReadLine();
-                            WriteLine("Enter the weight for the internationalShipment shipment:");
-                            decimal weight = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the delivery fee for the internationalShipment shipment:");
-                            decimal deliveryFee = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the destination country for the international shipment:");
-                            string? destinationCountry = ReadLine();
-                            WriteLine("enter the customs fee for the international shipment:");
-                            decimal customsFee = Convert.ToDecimal(ReadLine());
-                            WriteLine("Enter the destination for the internationalShipment shipment:");
-                            WriteLine("Enter the building number:");
-                            int buildingNumber = Convert.ToInt32(ReadLine());
-                            WriteLine("Enter the street:");
-                            string? street = ReadLine();
-                            WriteLine("Enter the city:");
-                            string? city = ReadLine();
-                            DeliveryAddress destination = new DeliveryAddress(buildingNumber, street, city);
-                             internationalShipment = new InternationalShipment(trackingCode, description, weight, deliveryFee, destination, destinationCountry, customsFee);
-                            break;
-                        }
-
-                }
-            }
 
             #endregion
-            #region 7.Add the shipments to the delivery center.
+
+            #region 1.Create a Driver.
+
+
+            #endregion
+            #region 2.Create a DeliveryCenter.
+            DeliveryCenter deliveryCenter = new DeliveryCenter("Delivery Center");
+            #endregion
+            #region 3.Assign the Driver to the DeliveryCenter.
+
+            #endregion
+            #region 4.Create one StandardShipment.
+            Shipment? standardShipment = new StandardShipment("SH001", "laptop", 2, 80);
+            #endregion
+            #region 5.Create one ExpressShipment.
+
+            Shipment? expressShipment = new ExpressShipment("SH002", "Mobile Phone", 2, 60, 30);
+            #endregion
+            #region 6.Create one InternationalShipment.
+            Shipment? internationalShipment = new InternationalShipment("Sh003", "Television", 8,120, "Germany",100);
+            #endregion
+            #region 7.Add all shipments to the DeliveryCenter.
             deliveryCenter.AddShipment(standardShipment);
             deliveryCenter.AddShipment(expressShipment);
             deliveryCenter.AddShipment(internationalShipment);
@@ -127,19 +61,34 @@ namespace C_.Basics
             #region 8.Print all shipments.
             deliveryCenter.PrintAllShipments();
             #endregion
-            #region 9.Search for a shipment using the existing tracking code indexer.
-            WriteLine("Enter the trackingCode of the shipment you want to search for:");
-            string? trackingCodeSearch = ReadLine();
-            Shipment? shipment = deliveryCenter[trackingCodeSearch];
+            #region 9.Call DeliveryHelper.PrintShipmentDetails() for each shipment.
+            WriteLine("\n==========================================\nPrinting Using DeliveryHelper");
+            DeliveryHelper.printShipmentDetails(standardShipment);
+            DeliveryHelper.printShipmentDetails(expressShipment);
+            DeliveryHelper.printShipmentDetails(internationalShipment);
             #endregion
-            #region 10.Remove one shipment using its tracking code.
-            WriteLine("Enter the trackingCode for the shipment you want to remove:");
-            string? trackingCodeToRemove = ReadLine();
-            deliveryCenter.RemoveShipment(trackingCodeToRemove);
+            #region 10.Updating Weight
+            WriteLine("\n==========================================");
+            WriteLine($"Original Weight : {standardShipment.Weight}");
+            standardShipment.UpdateWeight(5);
+            WriteLine($"Updated Weight : {standardShipment.Weight}");
+            standardShipment.UpdateWeight(0.5, true);
+            WriteLine($"Updated Weight After Packing : {standardShipment.Weight}");
+
             #endregion
-            #region 11.Print the remaining shipments.
-            deliveryCenter.PrintAllShipments();
+            #region 11.Build a Shipment[] holding mixed types and print all of them in a loop.
+            WriteLine("\n==========================================\nPrinting Using Shipment Array");
+            Shipment[] shipments =  { standardShipment, expressShipment, internationalShipment };
+            foreach (Shipment s in shipments)
+            {
+                s.PrintShipment();
+            }
             #endregion
+            #region 12.Demonstrate the sealed class and sealed method (comments or code).
+            //sealed calss:هو الكلاس الذي لا يمكن وراثته مرة اخري عبر كلاس فرعي عند استخدام الكاي ورد 
+            //sealed method: هي الميثود الذي لا يمكن تعريفها في كلاس اخر
+            #endregion
+
         }
 
     }

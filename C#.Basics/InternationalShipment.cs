@@ -48,7 +48,12 @@ namespace C_.Basics
         }
         #endregion
         #region constractor
-        public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string destinationCountry, decimal customsFee) : base(trackingCode, description, weight, deliveryFee, destination)
+        public InternationalShipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination, string destinationCountry, decimal customsFee) : base(trackingCode, description, weight, deliveryFee, destination)
+        {
+            DestinationCountry = destinationCountry;
+            CustomsFee = customsFee;
+        }
+        public InternationalShipment(string trackingCode, string description, double weight, decimal deliveryFee, string destinationCountry, decimal customsFee) : base(trackingCode, description, weight, deliveryFee,default)
         {
             DestinationCountry = destinationCountry;
             CustomsFee = customsFee;
@@ -57,10 +62,12 @@ namespace C_.Basics
         #region methods
         public override void PrintShipment()
         {
+            Console.WriteLine("-----------------------------");
             base.PrintShipment();
             Console.WriteLine($"Destination Country: {DestinationCountry}");
             Console.WriteLine($"Customs Fee: {CustomsFee}");
         }
+        public virtual void GenerateCustomsReport() { }
         #endregion
     }
 }
