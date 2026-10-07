@@ -37,8 +37,8 @@ namespace C_.Basics
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Weight: {Weight} kg");
             Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
-            Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
             Console.WriteLine($"Extra Fee: {ExtraFee}");
+            Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
         }
         string ITrackable.GetTrackingStatus()
         {
