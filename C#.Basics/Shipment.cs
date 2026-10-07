@@ -99,14 +99,6 @@ namespace C_.Basics
         {
             return DeliveryFee = newFee;
         }
-        public decimal UpdateWeight(decimal newWeight)
-        {
-            return Weight = newWeight;
-        }
-        public decimal UpdateWeight(decimal newWeight, decimal extraPackingWeight)
-        {
-            return Weight = newWeight + extraPackingWeight;
-        }
         public virtual void PrintShipment()
         {
             Console.WriteLine($"Tracking Code: {TrackingCode}");
