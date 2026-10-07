@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    public class Shipment
+    public abstract class Shipment
     {
         
 
@@ -71,12 +71,10 @@ namespace C_.Basics
                 deliveryFee = value > 0 ?  value : 0;
             }
         }
-        public virtual decimal EstimatedCost
+        public abstract decimal EstimatedCost
         {
-            get
-            {
-                return  DeliveryFee + (Convert.ToDecimal(Weight * 5));
-            }
+            get;
+           
         }
 
         #endregion
@@ -99,16 +97,8 @@ namespace C_.Basics
         {
             return DeliveryFee = newFee;
         }
-        public virtual void PrintShipment()
-        {
-            Console.WriteLine($"Tracking Code: {TrackingCode}");
-            Console.WriteLine($"Description: {Description}");
-            Console.WriteLine($"Weight: {Weight} kg");
-            Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
-            Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
-            
-            
-        }
+        public abstract void PrintShipment();
+        
         public void UpdateWeight(   double newWeight)
         {
             Weight = newWeight;

@@ -103,6 +103,28 @@ namespace C_.Basics
             Console.WriteLine($"Center Name: {CenterName}");
             Console.WriteLine("==========================================");
         }
+        public void PrintTrackingStatuses()
+        {
+            foreach(ITrackable t in array)
+            {
+                if (t != null)
+                {
+                    Console.WriteLine($"Shipment Status: {t.GetTrackingStatus()}");
+                }
+            }
+            
+        }
+        public void PrintInsuranceCosts()
+        {
+            foreach (IInsurable i in array)
+            {
+                if (i != null)
+                {
+                    Console.WriteLine($"Shipment Insurance Cost: ${i.CalculateInsurance()}");
+                }
+            }
+        }
+
         #endregion
     }
 }

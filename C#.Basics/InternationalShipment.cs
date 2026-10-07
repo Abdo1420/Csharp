@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    public class InternationalShipment : Shipment
+    public class InternationalShipment : Shipment, ITrackable, IInsurable
     {
         #region filds
         private string destinationCountry;
@@ -43,7 +43,7 @@ namespace C_.Basics
         {
             get
             {
-                return base.EstimatedCost + this.customsFee;
+                return DeliveryFee + (decimal)(Weight * 5) + CustomsFee;
             }
         }
         #endregion
@@ -63,9 +63,21 @@ namespace C_.Basics
         public override void PrintShipment()
         {
             Console.WriteLine("-----------------------------");
-            base.PrintShipment();
+            Console.WriteLine($"Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight} kg");
+            Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
+            Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
             Console.WriteLine($"Destination Country: {DestinationCountry}");
             Console.WriteLine($"Customs Fee: {CustomsFee}");
+        }
+        string ITrackable.GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is has been Delivered.";
+        }
+        decimal IInsurable.CalculateInsurance()
+        {
+            return EstimatedCost * 0.12m;
         }
         public virtual void GenerateCustomsReport() { }
         #endregion

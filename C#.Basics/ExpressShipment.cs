@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_.Basics
 {
-    internal class ExpressShipment : Shipment
+    internal class ExpressShipment : Shipment, ITrackable, IInsurable
     {
         private decimal extraFee;
         #region proprtis
@@ -13,7 +13,7 @@ namespace C_.Basics
         {
             get
             {
-                return base.EstimatedCost + ExtraFee;
+                return DeliveryFee + (decimal)(Weight * 5) + ExtraFee;
             }
         }
 
@@ -31,9 +31,22 @@ namespace C_.Basics
         #region methods
         public override void PrintShipment()
         {
+            
             Console.WriteLine("-----------------------------");
-            base.PrintShipment();
+            Console.WriteLine($"Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight} kg");
+            Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
+            Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
             Console.WriteLine($"Extra Fee: {ExtraFee}");
+        }
+        string ITrackable.GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is Out for Delivery.";
+        }
+        decimal IInsurable.CalculateInsurance()
+        {
+            return EstimatedCost * 0.08m;
         }
         #endregion
     }
