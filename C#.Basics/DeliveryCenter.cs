@@ -99,9 +99,9 @@ namespace C_.Basics
         }
         public void PrintCenterInfo()
         {
-            Console.WriteLine("==========================================");
+            DeliveryUtilities.PrintSeparator();
             Console.WriteLine($"Center Name: {CenterName}");
-            Console.WriteLine("==========================================");
+            DeliveryUtilities.PrintSeparator();
         }
         public void PrintTrackingStatuses()
         {

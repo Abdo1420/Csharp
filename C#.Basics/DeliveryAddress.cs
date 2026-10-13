@@ -2,7 +2,7 @@
 using static System.Console;
 namespace C_.Basics
 {
-    public struct DeliveryAddress
+    public class DeliveryAddress
     {
 
         #region fields and Conistractor

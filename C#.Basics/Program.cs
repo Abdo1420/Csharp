@@ -96,6 +96,159 @@ namespace C_.Basics
             #endregion
             #endregion
 
+            DeliveryUtilities.PrintSeparator();
+            DeliveryUtilities.PrintSystemTitle();
+            DeliveryUtilities.PrintSeparator();
+
+            #region Demonstrate reference assignment between two shipment variables
+            Shipment? shipment01 = new StandardShipment("SH001", "laptop", 2, 80, new DeliveryAddress(123, "threr", "cairo"));
+            Shipment sh = shipment01;
+
+            #endregion
+            #region Demonstrate that reference assignment does not create a new object
+            Write("reference assignment does not create a new object : "); WriteLine(sh.Equals(shipment01));
+            #endregion
+            #region Create a Shallow Copy using MemberwiseClone().
+            sh = shipment01.ShallowCopy();
+            #endregion
+            #region Demonstrate that the shallow copy shares the same DeliveryAddress
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Shallow Copy");
+            DeliveryUtilities.PrintSeparator();
+            WriteLine(shipment01.Destination.City);
+            WriteLine(sh.Destination.City);
+            sh.Destination.City = "Giza";
+            WriteLine(shipment01.Destination.City);
+            WriteLine(sh.Destination.City);
+            #endregion
+            #region Create a Deep Copy.
+            sh = shipment01.DeepCopy();
+            #endregion
+            #region Demonstrate that the deep copy has an independent DeliveryAddress
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Deep Copy");
+            DeliveryUtilities.PrintSeparator();
+            WriteLine(shipment01.Destination.City);
+            WriteLine(sh.Destination.City);
+            sh.Destination.City = "porto";
+            WriteLine(shipment01.Destination.City);
+            WriteLine(sh.Destination.City);
+            #endregion
+            #region Add and demonstrate the static shipment counter.
+            DeliveryUtilities.PrintSeparator();
+            Shipment.TotalShipmentsCreated = 0;
+            #endregion
+            #region  a. Create one StandardShipment.
+            StandardShipment? standardShipment = new StandardShipment("SH001", "laptop", 2, 80, new DeliveryAddress(123, "threr", "cairo"));
+            #endregion
+            #region b. Create one ExpressShipment.
+            ExpressShipment? expressShipment = new ExpressShipment("SH002", "Mobile Phone", 2, 60, new DeliveryAddress(66, "arab", "sina"), 30);
+            #endregion
+            #region c. Create one InternationalShipment.
+            InternationalShipment? internationalShipment = new InternationalShipment("Sh003", "Television", 8, 120, new DeliveryAddress(99, "bayrn", "munch"), "Germany", 100);
+            #endregion
+            #region Demonstrate the static constructor
+
+            //يعمل الاستاتيك كونستراكتور في بداية تشغيل البرنامج يكتب رسالة توضح ذالك وهي (Shipment System Initialized)
+            #endregion
+            #region Call GetTotalShipmentsCreated().
+            WriteLine( Shipment.GetTotalShipmentsCreated());
+            #endregion
+            #region Create and use DeliveryUtilities
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Useing DeliveryUtilities");
+            DeliveryUtilities.PrintSeparator();
+            #endregion
+            #region Create and use ShipmentExtensions
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Using ShipmentExtensions");
+            DeliveryUtilities.PrintSeparator();
+
+
+            #endregion
+            #region Demonstrate GetSummary().
+            WriteLine( standardShipment.GetSummary());
+            WriteLine( expressShipment.GetSummary());
+            WriteLine( internationalShipment.GetSummary());
+            #endregion
+            #region Demonstrate IsDelivered().
+           WriteLine( $"{standardShipment.TrackingCode} Is Delivered :{ standardShipment.IsDelivered()}");
+           WriteLine( $"{internationalShipment.TrackingCode} Is Delivered :{internationalShipment.IsDelivered()}");
+            #endregion
+            #region Split Shipment into partial class files.
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Partial Method");
+            DeliveryUtilities.PrintSeparator();
+            #endregion
+            #region Implement and demonstrate the partial method
+            
+            shipment01.OnTrackingStatusChanged("Delivered");
+            #endregion
+            DeliveryUtilities.PrintSeparator();
+            WriteLine("Assignment Completed");
+            DeliveryUtilities.PrintSeparator();
+            #region Make sure all functionality from Assignment 04 still works
+
+            #region  d. Add all shipments to the DeliveryCenter.
+            DeliveryCenter deliveryCenter = new DeliveryCenter("Route");
+            deliveryCenter.AddShipment(standardShipment);
+            deliveryCenter.AddShipment(expressShipment);
+            deliveryCenter.AddShipment(internationalShipment);
+            #endregion
+            #region  e. Print all shipment details.
+            deliveryCenter.PrintCenterInfo();
+            deliveryCenter.PrintAllShipments();
+            #endregion
+            #region f. Print the tracking status of every shipment.
+            ITrackable trackableShipment = standardShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Tracking Status of Standard Shipment:");
+            WriteLine(trackableShipment.GetTrackingStatus());
+            trackableShipment = expressShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Tracking Status of Express Shipment:");
+            WriteLine(trackableShipment.GetTrackingStatus());
+            trackableShipment = internationalShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Tracking Status of International Shipment:");
+            WriteLine(trackableShipment.GetTrackingStatus());
+            #endregion
+            #region g. Print the insurance cost of every shipment.
+            IInsurable insurableShipment = standardShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Insurance Cost of Standard Shipment:");
+            WriteLine(insurableShipment.CalculateInsurance());
+            insurableShipment = expressShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Insurance Cost of Express Shipment:");
+            WriteLine(insurableShipment.CalculateInsurance());
+            insurableShipment = internationalShipment;
+            WriteLine("---------------------------------------");
+            WriteLine("Insurance Cost of International Shipment:");
+            WriteLine(insurableShipment.CalculateInsurance());
+            #endregion
+            #region h. Store the shipment objects in an ITrackable[] array and print their tracking statuses.
+
+            ITrackable[] trackableShipments = { standardShipment, expressShipment, internationalShipment };
+            WriteLine("---------------------------------------");
+            WriteLine("Tracking Statuses of All Shipments:");
+            foreach (ITrackable shipment in trackableShipments)
+            {
+                WriteLine(shipment.GetTrackingStatus());
+            }
+            #endregion
+            #region i. Store the shipment objects in an IInsurable[] array and print their insurance values.
+            IInsurable[] insurableShipments = { standardShipment, expressShipment, internationalShipment };
+            WriteLine("---------------------------------------");
+            WriteLine("Insurance Values of All Shipments:");
+            foreach (IInsurable shipment in insurableShipments)
+            {
+                WriteLine(shipment.CalculateInsurance());
+            }
+            #endregion
+
+            #endregion
+
         }
 
     }

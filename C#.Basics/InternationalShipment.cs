@@ -62,7 +62,7 @@ namespace C_.Basics
         #region methods
         public override void PrintShipment()
         {
-            Console.WriteLine("-----------------------------");
+            DeliveryUtilities.PrintSeparator();
             Console.WriteLine($"Tracking Code: {TrackingCode}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Weight: {Weight} kg");
@@ -70,14 +70,29 @@ namespace C_.Basics
             Console.WriteLine($"Destination Country: {DestinationCountry}");
             Console.WriteLine($"Customs Fee: {CustomsFee}");
             Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
+            destination.GetFullAddress();
         }
         string ITrackable.GetTrackingStatus()
         {
-            return $"Shipment {TrackingCode} is has been Delivered.";
+            return TrackinCodeStutus=$"Shipment {TrackingCode} is has been Delivered.";
         }
         decimal IInsurable.CalculateInsurance()
         {
             return EstimatedCost * 0.12m;
+        }
+        public override Shipment CopyShipment()
+        {
+            return new InternationalShipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, this.DestinationCountry, this.CustomsFee);
+        }
+        public override Shipment ShallowCopy()
+        {
+            return (InternationalShipment)this.MemberwiseClone();
+        }
+        public override Shipment DeepCopy()
+
+        {
+            DeliveryAddress nweAddress = new DeliveryAddress(this.Destination.BuildingNumber, this.Destination.Street, this.Destination.City);
+            return new InternationalShipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee,nweAddress ,this.DestinationCountry ,this.CustomsFee);
         }
         public virtual void GenerateCustomsReport() { }
         #endregion

@@ -4,9 +4,10 @@ using System.Text;
 
 namespace C_.Basics
 {
-    internal class ExpressShipment : Shipment, ITrackable, IInsurable
+    public class ExpressShipment : Shipment, ITrackable, IInsurable
     {
         private decimal extraFee;
+
         #region proprtis
         public decimal ExtraFee { get; set; }=0;
         public override decimal EstimatedCost
@@ -31,22 +32,37 @@ namespace C_.Basics
         #region methods
         public override void PrintShipment()
         {
-            
-            Console.WriteLine("-----------------------------");
+
+            DeliveryUtilities.PrintSeparator();
             Console.WriteLine($"Tracking Code: {TrackingCode}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Weight: {Weight} kg");
             Console.WriteLine($"Delivery Fee: ${DeliveryFee}");
             Console.WriteLine($"Extra Fee: {ExtraFee}");
             Console.WriteLine($"Estimated Cost: ${EstimatedCost}");
+            destination.GetFullAddress();
         }
         string ITrackable.GetTrackingStatus()
         {
-            return $"Shipment {TrackingCode} is Out for Delivery.";
+            return TrackinCodeStutus=$"Shipment {TrackingCode} is Out for Delivery.";
         }
         decimal IInsurable.CalculateInsurance()
         {
             return EstimatedCost * 0.08m;
+        }
+        public override Shipment CopyShipment()
+        {
+            return new ExpressShipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, this.ExtraFee);
+        }
+        public override Shipment ShallowCopy()
+        {
+            return (ExpressShipment)this.MemberwiseClone();
+        }
+        public override Shipment DeepCopy()
+
+        {
+            DeliveryAddress nweAddress = new DeliveryAddress(this.Destination.BuildingNumber, this.Destination.Street, this.Destination.City);
+            return new ExpressShipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, nweAddress, this.extraFee);
         }
         #endregion
     }

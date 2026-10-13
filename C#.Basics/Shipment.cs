@@ -4,30 +4,44 @@ using System.Text;
 
 namespace C_.Basics
 {
-    public abstract class Shipment
+    public abstract partial class Shipment
     {
-        
+
 
         #region filds
         private string trackingCode;
         private string description;
         private double weight;
         private decimal deliveryFee;
+        protected DeliveryAddress destination = default!;
         #endregion
 
         #region propretis
-        public string? Destination(DeliveryAddress deliveryAddress)
+        public string? setAdress(DeliveryAddress deliveryAddress)
         {
             return $"{deliveryAddress.BuildingNumber},{deliveryAddress.Street},{deliveryAddress.City}";
 
-        } 
-        public  string  TrackingCode
+        }
+        public DeliveryAddress Destination
         {
             get
             {
-                return trackingCode ;
+                return destination;
             }
-           private set
+            set
+            {
+                destination.BuildingNumber = value.BuildingNumber;
+                destination.Street = value.Street;
+                destination.City = value.City;
+            }
+        }
+        public string TrackingCode
+        {
+            get
+            {
+                return trackingCode;
+            }
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentNullException("the trackingCode is null or empty");
@@ -57,7 +71,7 @@ namespace C_.Basics
             }
             set
             {
-                weight = value > 0 ?   value :  0;
+                weight = value > 0 ? value : 0;
             }
         }
         public decimal DeliveryFee
@@ -66,30 +80,36 @@ namespace C_.Basics
             {
                 return deliveryFee;
             }
-           private set
+            private set
             {
-                deliveryFee = value > 0 ?  value : 0;
+                deliveryFee = value > 0 ? value : 0;
             }
         }
         public abstract decimal EstimatedCost
         {
             get;
-           
+
         }
 
         #endregion
         #region constractors
-        
-        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+
+        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress Address)
         {
+            TotalShipmentsCreated++;
             TrackingCode = trackingCode;
             Description = description;
             Weight = weight;
             DeliveryFee = deliveryFee;
-            Description = description;
-        }
-        public Shipment(string trackingCode) : this(trackingCode, "Unknown", 1, 50, default) { }
+            destination = Address;
 
+        }
+        public Shipment(string trackingCode) : this(trackingCode, "Unknown", 1, 50, default) { TotalShipmentsCreated++; }
+        static Shipment()
+        {
+            TotalShipmentsCreated = 0;
+            Console.WriteLine("Shipment System Initialized");
+        }
         #endregion
 
         #region methods
@@ -98,19 +118,22 @@ namespace C_.Basics
             return DeliveryFee = newFee;
         }
         public abstract void PrintShipment();
-        
-        public void UpdateWeight(   double newWeight)
+
+        public void UpdateWeight(double newWeight)
         {
             Weight = newWeight;
         }
-        public void UpdateWeight(double newWeight,bool additionalWeight)
+        public void UpdateWeight(double newWeight, bool additionalWeight)
         {
             if (additionalWeight)
                 Weight += newWeight;
-          
+
         }
+        public partial void OnTrackingStatusChanged(string newStatus);
+
 
         #endregion
+
 
     }
 }
