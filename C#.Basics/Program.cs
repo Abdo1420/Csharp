@@ -1,4 +1,5 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
 using static System.Console;
 namespace C_.Basics
 {
@@ -28,6 +29,19 @@ namespace C_.Basics
             WriteLine(pair.getFirst());
             WriteLine(pair.getSocend());
             WriteLine(pair.ToString());
+            #endregion
+            #region Q4: What is a generic method? Write Swap<T> method.
+            //هي ميثود يمكنها ارجاع قيمة من اي نوع ويمكن استخدمها علي اي نوع فاليو سواء ريفرانس او فاليو
+            int num1 = 10;
+            int num2 = 5;
+            WriteLine("========== generic method =================");
+            WriteLine("------------ Before Swap-------------");
+            WriteLine($"Num1 = {num1}");
+            WriteLine($"Num2 = {num2}");
+            Methods.Swap<int>(ref num1, ref num2);
+            WriteLine("------------ After Swap-------------");
+            WriteLine($"Num1 = {num1}");
+            WriteLine($"Num2 = {num2}");
             #endregion
 
         }
