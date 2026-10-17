@@ -1,7 +1,7 @@
 ﻿
 namespace C_.Basics
 {
-    public class Dog:IComparable
+    public class Dog:Zoo ,IComparable
     {
 
         public string Name { get; set; }

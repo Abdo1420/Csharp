@@ -100,6 +100,16 @@ namespace C_.Basics
             //Dog dog = new Dog("dog");
             //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog not inharet class Zoo
             #endregion
-        }
+            #region Q12: How do you apply multiple constraints? Write an example. 
+            //يجب علي الكلاس ان يقبل نوع كلاس يقوم بعمل حاجتين معا مثال ان يرث من كلاس ويامبلمينت من انترفيس
+            //example calss Animals and cat and dog
+            //class Animals<T> T must inharet Class Zoo and implment interface IComparable
+            //Cat cat = new Cat("cat");
+            //Animals<Cat> myAnimal01 = new Animals<Cat>();//becose cat  inharet class Zoo only
+            //Dog dog = new Dog("dog");
+            //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog  inharet class Zoo and implment interface IComparable
+            #endregion
+
+        } 
     }
 }
