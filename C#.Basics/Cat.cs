@@ -1,7 +1,7 @@
 ﻿
 namespace C_.Basics
 {
-    public class Cat
+    public class Cat : Zoo
     {
 
         public string Name { get; set; }

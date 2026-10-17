@@ -91,6 +91,15 @@ namespace C_.Basics
             //Dog dog = new Dog("dog");
             //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog implment interface IComparable 
             #endregion
+            #region Q11: What is the base class constraint? Write an example.
+            // نوع الكلاس لازن يانهاريت من base class اي نوع كلاس الي هنكتبه 
+            //exampel class animals and class cat and dog
+            //class Animals<T> T must inharet Zoo
+            //Cat cat = new Cat("cat");
+            //Animals<Cat> myAnimal01 = new Animals<Cat>();//becose cat  inharet class Zoo
+            //Dog dog = new Dog("dog");
+            //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog not inharet class Zoo
+            #endregion
         }
     }
 }
