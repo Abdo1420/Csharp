@@ -43,6 +43,13 @@ namespace C_.Basics
             WriteLine($"Num1 = {num1}");
             WriteLine($"Num2 = {num2}");
             #endregion
+            #region Q5: Write a generic method FindMax<T> that finds maximum value
+            WriteLine("========== FindMax method =================");
+            int[] intArr = { 10,20,30,40,50};
+            double[] douArr = { 1.5, 2, 3.5, 5.5, 10.10 };
+           WriteLine( Methods.findMax(intArr));
+           WriteLine( Methods.findMax(douArr));
+            #endregion
 
         }
     }
