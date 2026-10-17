@@ -83,7 +83,14 @@ namespace C_.Basics
             //Dog dog = new Dog("dog");
             //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog not have lessconstractor
             #endregion
-
+            #region Q10:  What is the interface constraint? Write an example.
+            //هو ان الكلاس لا يقبل نوع ريفرانس يجب يامبلميت من انترفيس معين 
+            //exampel class animals and class cat and dog
+            //Cat cat = new Cat("cat");
+            //Animals<Cat> myAnimal01 = new Animals<Cat>();//becose cat not implment interface IComparable
+            //Dog dog = new Dog("dog");
+            //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog implment interface IComparable 
+            #endregion
         }
     }
 }

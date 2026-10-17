@@ -1,7 +1,7 @@
 ﻿
 namespace C_.Basics
 {
-    public class Dog
+    public class Dog:IComparable
     {
 
         public string Name { get; set; }
@@ -9,6 +9,11 @@ namespace C_.Basics
         public Dog(string name)
         {
             Name = name;
+        }
+
+        public int CompareTo(object? obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
