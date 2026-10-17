@@ -75,6 +75,14 @@ namespace C_.Basics
             //Container<string> strcon = new Container<string>("Contenac01");
             //Container<int> strcon = new Container<int>(2);//error becose int value type
             #endregion
+            #region Q9: What is the 'new()' constraint? Write an example.
+            // يحمل نوع كلاس الذي يقوم باايمبلمينت lessconstractor only
+            //Exampel class animal genaric class and class cat  have lessconstractor but dog not have it
+            //Cat cat = new Cat("cat");
+            //Animals<Cat> myAnimal01 = new Animals<Cat>();//becose cat have lessconstractor
+            //Dog dog = new Dog("dog");
+            //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog not have lessconstractor
+            #endregion
 
         }
     }
