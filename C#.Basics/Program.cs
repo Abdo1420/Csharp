@@ -16,8 +16,19 @@ namespace C_.Basics
             Container<string> stringCon = new Container<string>("one");
             intCon.Add(3);
             WriteLine(intCon.Get());
+            doubleCon.Add(10.99);
+            WriteLine(doubleCon.Get());
+            stringCon.Add("anbdooo");
+            WriteLine(stringCon.Get());
             #endregion
-            
+            #region Q3: What are multiple type parameters? Write Pair<TKey, TValue>.
+            //هو كلاس يقوم بانشاء اوبجيكت يحمل نوعين متشابهين او مختلفين من اي نوع داتا سواء ريفرانس او فاليو
+            WriteLine("========== Pair =================");
+            Pair<int, string> pair = new Pair<int, string>(1, "one");
+            WriteLine(pair.getFirst());
+            WriteLine(pair.getSocend());
+            WriteLine(pair.ToString());
+            #endregion
 
         }
     }
