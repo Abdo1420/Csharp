@@ -35,6 +35,9 @@ namespace C_.Basics
             int num1 = 10;
             int num2 = 5;
             WriteLine("========== generic method =================");
+            WriteLine("  ");
+            WriteLine("========== Swap method =================");
+
             WriteLine("------------ Before Swap-------------");
             WriteLine($"Num1 = {num1}");
             WriteLine($"Num2 = {num2}");
@@ -54,6 +57,17 @@ namespace C_.Basics
             //هو انترفيس يمكن لاي كلاس يامبلمينت منه ويحمل اي نوع سواء فاليو او ريفرانس
             IRepository<Container<int>> Iintcon;
             IRepository<Container<double>>Idoucon;
+            #endregion
+            #region Q7: What is the 'struct' constraint? Write an example.
+            WriteLine("========== 'struct' constraint =================");
+            //تحديد نوع الكلاس بحيث لا يكون نوعه فاليو تايب فقط 
+            //مثال كلاس كالكوليتور لا تحمل اي نوع غير الفاليو تايب
+            Calculetor<int> intcalc = new Calculetor<int>(55);
+            WriteLine(intcalc.getNumper());
+            Calculetor<double> doucalc = new Calculetor<double>(9.5);
+            WriteLine(doucalc.getNumper());
+            Calculetor<decimal> deccalc = new Calculetor<decimal>(9.9m);
+            WriteLine(deccalc.getNumper());
             #endregion
 
         }
