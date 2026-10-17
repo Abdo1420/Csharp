@@ -50,6 +50,11 @@ namespace C_.Basics
            WriteLine( Methods.findMax(intArr));
            WriteLine( Methods.findMax(douArr));
             #endregion
+            #region Q6: What is a generic interface? Write IRepository<T>. 
+            //هو انترفيس يمكن لاي كلاس يامبلمينت منه ويحمل اي نوع سواء فاليو او ريفرانس
+            IRepository<Container<int>> Iintcon;
+            IRepository<Container<double>>Idoucon;
+            #endregion
 
         }
     }

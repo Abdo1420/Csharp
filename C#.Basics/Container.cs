@@ -1,7 +1,7 @@
 ﻿
 namespace C_.Basics
 {
-    public class Container<T>
+    public class Container<T>:IRepository<T>
     {
         private T item;
         public Container(T item)
