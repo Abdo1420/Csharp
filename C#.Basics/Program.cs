@@ -109,7 +109,17 @@ namespace C_.Basics
             //Dog dog = new Dog("dog");
             //Animals<Dog> myAnimal02 = new Animals<Dog>();//becose dog  inharet class Zoo and implment interface IComparable
             #endregion
+            #region Q13: What does the 'default' keyword do in generics?
+            //ارجاع القيم الافتراضية للنوع سواء فاليو او ريفرانس
+            /*مثال الاتي
+             * int = 0
+             * double = 0.0
+             * decimal = 0.0
+             * bool = true
+             * rfranse type = Null */
 
-        } 
+            #endregion
+
+        }
     }
 }
