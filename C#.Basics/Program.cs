@@ -137,7 +137,10 @@ namespace C_.Basics
             //out kayword: تكتب جانب النوع بحيث يتم التحديد الكلاس لارجاع القيم فقط لا ياخذ براميتار
 
             #endregion
-
+            #region Q16: What is contravariance? Explain the 'in' keyword.
+            //contravariance: هو مصطلح يطلق علي الكلاس الذي يسمح باخذ البراميتار فقط لا يرجع اي قيم يدخل القيم فقط
+            // in Kayword: contravarianceهي كلمة تكتب قبل نوع الكلاس لكي تقوم بتحديده الي 
+            #endregion
 
         }
     }
