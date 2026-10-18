@@ -59,7 +59,7 @@ namespace C_.Basics
             //IRepository<Container<double>>Idoucon;
             #endregion
             #region Q7: What is the 'struct' constraint? Write an example.
-            WriteLine("========== 'struct' constraint =================");
+            //WriteLine("========== 'struct' constraint =================");
             //تحديد نوع الكلاس بحيث لا يكون نوعه فاليو تايب فقط 
             //مثال كلاس كالكوليتور لا تحمل اي نوع غير الفاليو تايب
             //Calculetor<int> intcalc = new Calculetor<int>(55);
@@ -117,6 +117,19 @@ namespace C_.Basics
              * decimal = 0.0
              * bool = true
              * rfranse type = Null */
+
+            #endregion
+            #region Q14: Write a SafeList<T> that returns default when the index is invalid.
+            WriteLine("================ SafeList============");
+            List<int> intList= new List<int>();
+            List<double> douList=new List<double>();
+            List<string> strList=new List<string>();
+            SafeList<int> list01 = new SafeList<int>(intList);
+            SafeList<double> list02 = new SafeList<double>(douList);
+            SafeList<string> list03 = new SafeList<string>(strList);
+            WriteLine(list01.getList());
+            WriteLine(list02.getList());
+            WriteLine(list03.getList());
 
             #endregion
 
