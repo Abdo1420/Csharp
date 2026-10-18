@@ -141,6 +141,24 @@ namespace C_.Basics
             //contravariance: هو مصطلح يطلق علي الكلاس الذي يسمح باخذ البراميتار فقط لا يرجع اي قيم يدخل القيم فقط
             // in Kayword: contravarianceهي كلمة تكتب قبل نوع الكلاس لكي تقوم بتحديده الي 
             #endregion
+            #region Q17: What is the difference between covariance and contravariance?
+            //example class animals and cat and dog
+            //Covariance : يمكن استخدام كلاس الاب في مكان الابن عن طريق kayword (out)
+            Cat cat = new Cat("lolo", "meow");
+            Dog dog = new Dog("Bond", "how");
+            IProducer<Cat> CatProducer = new CatProducer();
+            IProducer<Animals> animalProducer = CatProducer;
+            Animals a = animalProducer.getName();
+            WriteLine(a.Name);
+            //contravariance:يمكن استخدام كلاس الابن مكان الاب وتعمل عن طريق kayword (in)
+            ISound<Animals> animalSound = new DogSound();
+            ISound<Dog> dogSound = animalSound;
+            dogSound.setSound(dog);
+            //
+            
+            
+
+            #endregion
 
         }
     }

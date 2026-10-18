@@ -1,19 +1,16 @@
 ﻿
 namespace C_.Basics
 {
-    public class Dog:Zoo ,IComparable
+    public class Dog:Animals
     {
 
-        public string Name { get; set; }
 
-        public Dog(string name)
+
+        public Dog(string name, string sound) : base(name, sound)
         {
-            Name = name;
+
         }
 
-        public int CompareTo(object? obj)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

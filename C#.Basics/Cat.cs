@@ -1,17 +1,14 @@
 ﻿
 namespace C_.Basics
 {
-    public class Cat : Zoo
+    public class Cat : Animals
     {
 
-        public string Name { get; set; }
-        public Cat(string name)
+        
+        public Cat(string name,string sound):base(name,sound)
         {
-            Name = name;
+            
         }
-        public Cat()
-        {
-
-        }
+       
     }
 }
