@@ -47,11 +47,11 @@ namespace C_.Basics
             //WriteLine($"Num2 = {num2}");
             #endregion
             #region Q5: Write a generic method FindMax<T> that finds maximum value
-           // WriteLine("========== FindMax method =================");
-           // int[] intArr = { 10,20,30,40,50};
-           // double[] douArr = { 1.5, 2, 3.5, 5.5, 10.10 };
-           //WriteLine( Methods.findMax(intArr));
-           //WriteLine( Methods.findMax(douArr));
+            // WriteLine("========== FindMax method =================");
+            // int[] intArr = { 10,20,30,40,50};
+            // double[] douArr = { 1.5, 2, 3.5, 5.5, 10.10 };
+            //WriteLine( Methods.findMax(intArr));
+            //WriteLine( Methods.findMax(douArr));
             #endregion
             #region Q6: What is a generic interface? Write IRepository<T>. 
             //هو انترفيس يمكن لاي كلاس يامبلمينت منه ويحمل اي نوع سواء فاليو او ريفرانس
@@ -120,18 +120,24 @@ namespace C_.Basics
 
             #endregion
             #region Q14: Write a SafeList<T> that returns default when the index is invalid.
-            WriteLine("================ SafeList============");
-            List<int> intList= new List<int>();
-            List<double> douList=new List<double>();
-            List<string> strList=new List<string>();
-            SafeList<int> list01 = new SafeList<int>(intList);
-            SafeList<double> list02 = new SafeList<double>(douList);
-            SafeList<string> list03 = new SafeList<string>(strList);
-            WriteLine(list01.getList());
-            WriteLine(list02.getList());
-            WriteLine(list03.getList());
+            //WriteLine("================ SafeList============");
+            //List<int> intList= new List<int>();
+            //List<double> douList=new List<double>();
+            //List<string> strList=new List<string>();
+            //SafeList<int> list01 = new SafeList<int>(intList);
+            //SafeList<double> list02 = new SafeList<double>(douList);
+            //SafeList<string> list03 = new SafeList<string>(strList);
+            //WriteLine(list01.getList());
+            //WriteLine(list02.getList());
+            //WriteLine(list03.getList());
 
             #endregion
+            #region Q15: What is covariance? Explain the 'out' keyword.
+            //هو كلاس لايسمع باخذ براميتار للبروبرتي او الميثودس يسمح لهم بارجع القيم فقط 
+            //out kayword: تكتب جانب النوع بحيث يتم التحديد الكلاس لارجاع القيم فقط لا ياخذ براميتار
+
+            #endregion
+
 
         }
     }
