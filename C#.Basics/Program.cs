@@ -75,26 +75,32 @@ namespace C_.Basics
             //Product.PrintReport(catalog, p => Console.WriteLine($"[{p.Category}]{p.Name}|Price: ${p.Price}|Stock: {p.Stock}"));
             #endregion
             #region 3.2. Transform Products
-            Console.WriteLine("--- Summary List —--");
-            var summaryList = Product.TransformProducts(catalog, p => ($"{p.Name}  (${p.Price})"));
-            foreach (string item in summaryList)
+            //Console.WriteLine("--- Summary List —--");
+            //var summaryList = Product.TransformProducts(catalog, p => ($"{p.Name}  (${p.Price})"));
+            //foreach (string item in summaryList)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine("----------------------");
+            //}
+            //Console.WriteLine("--- Price Labels —--");
+            //var PriceLabel = Product.TransformProducts(catalog, p =>
+            //{
+            //    string Label = p.Price >= 100 ? "Expensive!" : "Affordable";
+            //    return $"{p.Name}:{Label}";
+            //});
+            //foreach (string item in PriceLabel)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine("---------------------");
+            //}
+            #endregion
+            #region 3.3. Filter Products
+            var lowStoke = Product.FilterProducts(catalog, p => p.Stock < 20);
+            foreach (Product p in lowStoke)
             {
-                Console.WriteLine(item);
-                Console.WriteLine("----------------------");
-            }
-            Console.WriteLine("--- Price Labels —--");
-            var PriceLabel = Product.TransformProducts(catalog, p =>
-            {
-                string Label = p.Price >= 100 ? "Expensive!" : "Affordable";
-                return $"{p.Name}:{Label}";
-            });
-            foreach (string item in PriceLabel)
-            {
-                Console.WriteLine(item);
-                Console.WriteLine("---------------------");
+                Console.WriteLine($" [LOW STOCK]{p.Name}:only {p.Stock} left!");
             }
             #endregion
-
             #endregion
 
         }
