@@ -61,7 +61,21 @@ namespace C_.Basics
             }
 
             #endregion
-            
+            #region Task 03 : Custom Report Generator
+            #region 3.1  Print Reports 
+            Console.WriteLine("=====================================");
+            Console.WriteLine("--- Short Report —");
+            Console.WriteLine("=====================================");
+            Product.PrintReport(catalog, p => Console.WriteLine($"{p.Name}==>${p.Price}"));
+            Console.WriteLine("=====================================");
+            Console.WriteLine("--- Detailed Report —");
+            Console.WriteLine("=====================================");
+            Product.PrintReport(catalog, p => Console.WriteLine($"[{p.Category}]{p.Name}|Price: ${p.Price}|Stock: {p.Stock}"));
+            #endregion
+            #region 3.2. Transform Products
+
+            #endregion
+            #endregion
 
         }
     }
