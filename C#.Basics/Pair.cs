@@ -16,11 +16,11 @@ namespace C_.Basics
         }
         public TKey getFirst()
         {
-            return First;
+            return First!;
         }
         public TValue getSocend()
         {
-            return Socend;
+            return Socend!;
         }
         public override string ToString()
         {

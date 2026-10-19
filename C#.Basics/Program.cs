@@ -176,10 +176,30 @@ namespace C_.Basics
             الوراثة باختلاف نوع البيرانت : وهنا يتم تحديد نوع خاص بالابن للتعامل معه وعند تحديد نوع الابن ياخذ الاب نفس النوع الذي تم تحديده تلقائيا
              */
             //مثال
-            AllTypeCalc<double> stringnum = new AllTypeCalc<double>();
-            stringnum.AddNum(9.5);
-            IntCalc intNum = new IntCalc();
-            intNum.AddNum(5);
+            //AllTypeCalc<double> stringnum = new AllTypeCalc<double>();
+            //stringnum.AddNum(9.5);
+            //IntCalc intNum = new IntCalc();
+            //intNum.AddNum(5);
+            #endregion
+            #region Q20: Complete Exercise - Create a generic Cache<TKey, TValue>with Add, Get, Remove, Contains, and expiration support. 
+            var cache = new Cache<string, string>();
+
+            // إضافة عنصر ينتهي بعد 3 ثوانٍ
+            cache.Add("user01", "abdo", DateTime.Now.AddSeconds(3));
+            cache.Add("user02", "ahmed", DateTime.Now.AddSeconds(5));
+            //تطبع ترو لانه موجود في القاموس
+            Console.WriteLine(cache.Contains("user01"));
+            Console.WriteLine(cache.Contains("user02"));
+            Console.WriteLine(cache.Contains("user03"));
+            Console.WriteLine(cache.getValue("user01"));
+            Console.WriteLine(cache.getValue("user02"));
+            
+
+            // ننتظر 4 ثوانٍ حتى تنتهي الصلاحية
+            System.Threading.Thread.Sleep(4000);
+
+            Console.WriteLine(cache.Contains("user01"));
+            Console.WriteLine(cache.Contains("user02"));
             #endregion
         }
     }
