@@ -8,90 +8,89 @@ namespace C_.Basics
         {
             #region Q1 Object Copying
             #region a) What happens when you assign one object variable to another object variable?
-            //سياخذ المتغير الاخر نفس عنوان المتغير الاول وسياخذ كل منهما نفس القيم.
+            //The other variable will take on the same address as the first variable, and both will hold the same values.
             #endregion
             #region b) Does assigning one object to another create a new object? Explain.
-
-            //لا لم يقوم بانشاء اوبجيكت جديد بل سياخذ نسخة من العنوان الخاص بالاوبجيكت الاول وبالتالي سياخذ كل القيم التي يحتفظ بها وعند عمل اي تغير في هذه القيم سوف يتغير في الاوبجيكت الاول والاخير معا
+            //No, it does not create a new object; instead, it takes a copy of the address of the first object. Consequently, it inherits all the values ​​held by that object, and any changes made to these values ​​will be reflected in both the first and the subsequent object.
             #endregion
             #region c) What is the difference between copying an object and copying its reference?
-            //copying an object: هو انشاء اوبجيكت اخر بعنوان منفصل عن الاول ولاكن يحمل نفس القيم واي تغير في القيم الخاصة به لن ينعكس التغير علي الاوبجيكت الاول
-            //copying its reference : هو انشائ اوبجيكت يحمل نفس الهنوان الخاص بالاوبجيكت الاصل وبالتالي اي تغير في قيم اي واحد منهم ينعكس علي الاخر
+            //copying an object: It involves creating another object that is distinct from the first, yet holds the same values; any changes made to its values ​​will not be reflected in the original object.
+            //copying its reference : It involves creating an object that holds the same address as the original object; consequently, any change to the values ​​of either one is reflected in the other.
             #endregion
             #endregion
 
             #region Q2  Shallow Copy vs Deep Copy
             #region a) What is a Shallow Copy?
-            //هو نسخ سطحي للاوبجيكت اي ان القيم من النوع فاليو ياخذ منها نسخة منفصلة من الاوبجيكت الاصلي اما النوع ريفرانس ياخذ نسخة من العنوان الخاص بها اي ان التعيرات تحدث في الفاليو تياب واي تغير في القيم من النوع ريفرانس سوفت تنعكس علي الاوبجيكت الاول
+            //It is a shallow copy of an object: for values ​​of a "value type," it creates a separate copy, whereas for "reference types," it copies the reference (the memory address). Consequently, any changes made to a value type remain isolated, while any changes made to a reference type will be reflected in the original object.
             #endregion
             #region b) What is a Deep Copy?
-            //هو اخذ نسخة باوبجيكت مختلف تماما عن الاوبجيكت الاصلي اي ان الاوبجيكت الاصل كان يحمل قيم فاليو تايب او ريفرانس تايب الاوبجيكت الاخر ياخذ منهم نسخ منفصلة تماما عنه اي ان اي تغير يحدث في القيم بينهم لن ينعكس علي الاوبيجكت الاخر
+            //This involves creating a copy as an object that is entirely distinct from the original. Whether the original object contains value types or reference types, the new object receives completely independent copies of them; consequently, any change made to the values ​​in one object will not be reflected in the other.
 
             #endregion
             #region c) What happens to reference-type members when a Shallow Copy is created?
-            //ستحمل هذه النسخة نفس العنوان الذي يحمل الاوبجيكت الاصلي وبالتالي اي تغير في النسخة سينعكس علي الاوبجيكت الاصلي
+            //This copy will bear the same reference as the original object; consequently, any changes made to the copy will be reflected in the original object.
 
             #endregion
             #region d) What happens to reference-type members when a Deep Copy is created?
-            //سياخذ الاوبجيكت نسخة مختلفة عن الاوبجيكت الاصلي اي ان القيم ستكون في عناوين مختلفة تماما في كل اوبجيكت وعند حدوث اي تغير في القيم لن ينعكس علي الاوبجيكت الاخر
+            //The object will take on a version distinct from the original; the values ​​will reside at entirely different memory addresses in each object, and any change made to the values ​​will not be reflected in the other object.
             #endregion
 
             #endregion
 
             #region Q3  Static Members
             #region a) What is a static field, and how is it different from an instance field?
-            //static field : هو ميمبر يتم تعرفيه عن طريق كتابة كلمة استاتيك وهو يكون مخصص للكلاس فقط لامكن للاوبجيكت ان يتعامل معه او ياغير في قيمته وهو مشترك في الكلاس ككل ويمكن استدعائه من خلال اسم الكلاس وليس بواسطة اوبجيكت 
-            //instance field : هو ميمبر عادي يتم تعرفيه بدون كاي ورد معينة ويمكن للاوبجيكت التعامل معه والتغير في قيمته عند انشاء اي اوبجيكت يحمل كل اوبجيكت ميبر مستقل خاص به ويتم استدعائه عن طريق اسم الاوبجيكت فقط
+            //static field : A member defined using the keyword "static" belongs exclusively to the class itself; individual objects cannot access or modify its value. It is shared across the entire class and can be invoked using the class name rather than through an object. 
+            //instance field : This is a standard member, defined without any specific keywords. An object can interact with it and modify its value; when an object is created, it possesses its own independent member, which is accessed simply by using the object's name.
 
             #endregion
             #region b) What is a static method? Can a static method directly access instance members?
-            //هي ميثود يتم تعرفيها عن طريق الكاي ورد ستاتيك ويتم استدعائها بدون اوبجيكت عن طريق اسم الكلاس نفسه ولا يمكن استخدام انستانس ميبمبر يجب ان يكون ستاتيك ايضا
+            //This is a method defined using the `static` keyword; it is invoked without an object—by using the class name itself—and cannot access instance members (which must also be `static`).
 
             #endregion
             #region c) What is a static constructor, and when is it executed?
-            //هو كونستراكتور يتم انشائه عن طريق الكاي ورد ستاتيك ولا ياخذ براميتار او اكسيس موديفاير ويتم انشائه ليقوم بتعين القيم التي نريدها للاستاتيك فيلدز ويتم تنفيذه لمرة واحدة فقط عند انشائ اوبجيكت او استدعاء اي ميثود داخل الكلاس
+            //It is a constructor created using the `static` keyword; it does not accept any parameters or access modifiers. It is designed to assign specific values ​​to static fields and is executed only once—either when an object is created or when any method within the class is called.
 
             #endregion
             #region d) What is a static class? Can you create an object from a static class?
-            //هو كلاس يتم انشائه عن طريق كاي ورد ستاتيك وهو كلاس لايمكن انشاء اي اوبجيكت منه ويجب ان تكون كل خصائصه ستاتيك وكل ما بداخله من فيلدز او ميثودس ستاتيك ايضا لا يقبل ان يكون بداخله انستانس فيلظز او ميثود
+            //This is a class created using the `static` keyword. It is a class from which no objects can be instantiated; all of its properties—including all fields and methods contained within it—must also be `static`. It does not permit the inclusion of any instance fields or instance methods.
 
             #endregion
             #endregion
 
             #region Q4  Extension Methods
             #region a) What is an Extension Method?
-            //هي دالة اضافية متاح اضافتها في كلاس بيلد ان او كلاس عادي تمت كتابته بالفعل وتعامل معاملة الدوالي التي داخل الكلاس عادي
+            //It is an additional function that can be added to a built-in class or a custom class that has already been defined; it is treated just like the functions that reside within the class itself.
 
             #endregion
             #region b) What keyword must be used in the first parameter of an extension method?
-            //this هي اول كلمة يجب ان تكتب في الباميتار لكي تكون من ضمن الكلاس التي سياتي بعد هذه الكلمة
+            //this It is the first word that must be written in the parameter, so that it becomes part of the class that follows this word.
 
             #endregion
             #region c) Where must an extension method be declared?
-            //يمكن الاعلان عنها في كلاس اخر علي سبيل المثال stringExtension ويكون ستاتيك كلاس وتكون هذه الدالة ستاتيك ايضا
+            //It can be declared in another class—for example, `StringExtension`—which should be a static class, and the function itself should also be static.
 
             #endregion
             #region d) Can an extension method access private members of the class it extends?
-            //لا يمكن الوصول الي الميبر الخاص بالكلاس لان حدودها داخل الكلاس فقط والمثود تم انائه خارج الكلاس نفسه اذا يمكنه الوصول الي الميمبر المورثة او البابلك
+            //The class member cannot be accessed because its scope is limited to the class itself, and the method was defined outside of that class; therefore, it can only access inherited or public members.
 
             #endregion
             #endregion
 
             #region Q5  Partial Classes and Partial Methods
             #region a) What is a Partial Class?
-            //البرتشال كلاس هو كلاس مقسوم الي قسمين وكل جزء يكون كلاس يحمل نفس الاسم ويكون قبله الكاي ورد partial ولاكن يعمل في جزء واحد
+            //A partial class is a class divided into two parts; each part is a class with the same name, preceded by the `partial` keyword, yet they function as a single, unified class.
 
             #endregion
             #region b) Why would a developer split one class into multiple files?
-            //لانه اذا اردنا تقسيم كتابة الكلاس علي التيم يمككنا فعل ذالك عن طريق برتشال كلاس بهذه الميزة يمكن للتيم استخدام الكلاس في وقت واحد او عند كبر حجم الكود يمكننا تقسيم الكلاس الي فايلز وكل فايلز تحمل جزء معين من الكود
+            //If we want to distribute the task of writing a class among the team, we can do so using "partial classes." This feature allows the team to work on the same class simultaneously. Alternatively, as the codebase grows, we can split a class into multiple files, with each file containing a specific portion of the code.
 
             #endregion
             #region c) What is a Partial Method?
-            //هي ميثود يتم انشائها في جزء من الكلاس يجبر الجزء الاخر علي عمل امبلمنتيشن للهذه الميثود
+            //It is a method defined in one part of a class that forces another part of the class to implement it.
 
             #endregion
             #region d) What happens if a declared partial method has no implementation?
-            //سيحدث ايرور في الكومبايل تيام عن سيجنتشر الميثود
+            //A compile-time error will occur regarding the method signature.
 
             #endregion
             #endregion
