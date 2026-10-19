@@ -142,24 +142,34 @@ namespace C_.Basics
             // in Kayword: contravarianceهي كلمة تكتب قبل نوع الكلاس لكي تقوم بتحديده الي 
             #endregion
             #region Q17: What is the difference between covariance and contravariance?
-            //example class animals and cat and dog
-            //Covariance : يمكن استخدام كلاس الاب في مكان الابن عن طريق kayword (out)
-            Cat cat = new Cat("lolo", "meow");
-            Dog dog = new Dog("Bond", "how");
-            IProducer<Cat> CatProducer = new CatProducer();
-            IProducer<Animals> animalProducer = CatProducer;
-            Animals a = animalProducer.getName();
-            WriteLine(a.Name);
-            //contravariance:يمكن استخدام كلاس الابن مكان الاب وتعمل عن طريق kayword (in)
-            ISound<Animals> animalSound = new DogSound();
-            ISound<Dog> dogSound = animalSound;
-            dogSound.setSound(dog);
-            //
-            
-            
+            ////example class animals and cat and dog
+            ////Covariance : يمكن استخدام كلاس الاب في مكان الابن عن طريق kayword (out)
+            //Cat cat = new Cat("lolo", "meow");
+            //Dog dog = new Dog("Bond", "how");
+            //IProducer<Cat> CatProducer = new CatProducer();
+            //IProducer<Animals> animalProducer = CatProducer;
+            //Animals a = animalProducer.getName();
+            //WriteLine(a.Name);
+            ////contravariance:يمكن استخدام كلاس الابن مكان الاب وتعمل عن طريق kayword (in)
+            //ISound<Animals> animalSound = new DogSound();
+            //ISound<Dog> dogSound = animalSound;
+            //dogSound.setSound(dog);
+            ////
+
+
 
             #endregion
+            #region Q18: How do static members work in generic types?
+            //   ستاتيك ميمبر داخل الجينارك كيلاس بيبقا مستقل تماما بكل نوع مختلف يعني باستخدام نفس الميمبر مع انواع مختلفة زي دابل وسترينج وانتيجر هنلاقي كل فاليو مستقلة لا تدخل مع التانية 
+            //مثال توضيحي 
+            Container<string>.counter = 5;
+            Container<double>.counter = default;
+            Container<int>.counter = 55;
+            WriteLine(Container<string>.counter);
+            WriteLine(Container<double>.counter);
+            WriteLine(Container<int>.counter);
 
+            #endregion
         }
     }
 }
