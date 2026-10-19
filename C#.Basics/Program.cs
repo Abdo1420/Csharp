@@ -162,13 +162,24 @@ namespace C_.Basics
             #region Q18: How do static members work in generic types?
             //   ستاتيك ميمبر داخل الجينارك كيلاس بيبقا مستقل تماما بكل نوع مختلف يعني باستخدام نفس الميمبر مع انواع مختلفة زي دابل وسترينج وانتيجر هنلاقي كل فاليو مستقلة لا تدخل مع التانية 
             //مثال توضيحي 
-            Container<string>.counter = 5;
-            Container<double>.counter = default;
-            Container<int>.counter = 55;
-            WriteLine(Container<string>.counter);
-            WriteLine(Container<double>.counter);
-            WriteLine(Container<int>.counter);
-
+            //Container<string>.counter = 5;
+            //Container<double>.counter = default;
+            //Container<int>.counter = 55;
+            //WriteLine(Container<string>.counter);
+            //WriteLine(Container<double>.counter);
+            //WriteLine(Container<int>.counter);
+            #endregion
+            #region Q19: How can you inherit from a generic class?
+            /*
+             تتم الوراثة في الجينارك كلاس علي محورين خما الاتي
+            الوراثة علي نفس نوع البيرانت كلاس : وهنا الابن يرث من الاب علي نفس نوعه عن طريق الجينارك كايورد 
+            الوراثة باختلاف نوع البيرانت : وهنا يتم تحديد نوع خاص بالابن للتعامل معه وعند تحديد نوع الابن ياخذ الاب نفس النوع الذي تم تحديده تلقائيا
+             */
+            //مثال
+            AllTypeCalc<double> stringnum = new AllTypeCalc<double>();
+            stringnum.AddNum(9.5);
+            IntCalc intNum = new IntCalc();
+            intNum.AddNum(5);
             #endregion
         }
     }
