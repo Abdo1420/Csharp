@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Net.WebRequestMethods;
 
 namespace C_.Basics
 {
@@ -36,7 +37,7 @@ namespace C_.Basics
             }
             return result;
         }
-        public static void PrintReport(List<Product> catalog, Action<Product> print)
+        public static void PrintReport(List<Product> catalog, Action<Product> print)//use (action) delegate becose the funcion is print only void type
         {
             foreach (Product item in catalog)
             {
@@ -44,6 +45,27 @@ namespace C_.Basics
                 Console.WriteLine("=====================================");
             }
 
+        }
+        public static List<string> TransformProducts(List<Product> ctalog,Func<Product,string>transToStr)//use (Funce) delegate becose transfer to string
+        {
+            List<string?> SummaryList=new();
+            foreach(Product p in ctalog)
+            {
+                string st = transToStr(p);
+                SummaryList.Add(st);
+            }
+            return SummaryList!;
+        }
+        public static List<Product> FilterProducts(List<Product> catalog, Predicate<Product> instoke)//use bultin delegate (predicate) becose it return bool 
+        {
+            List<Product> lowStoke = new();
+            foreach(Product p in catalog) { 
+                if (instoke(p))
+                {
+                    lowStoke.Add(p);
+                }
+            }
+            return lowStoke;
         }
         #endregion
 
