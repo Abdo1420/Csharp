@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+using System.Diagnostics;
 using System.Linq.Expressions;
 using static System.Console;
 namespace C_.Basics
@@ -131,38 +133,67 @@ namespace C_.Basics
             #endregion
 
             #region Exercise 4: Unique Email Validator
-            HashSet<string> email=new(StringComparer.OrdinalIgnoreCase);
-            email.Add("ahmed@test.com");
-            email.Add("AHMED@test.com");
-            email.Add("sara@test.com");
-            email.Add("Sara@Test.Com");
-            Console.WriteLine("=============\n");
-            Console.WriteLine(email.Count()); 
-            Console.WriteLine("count = 2 becose (StringComparer.OrdinalIgnoreCase) must hashset not deffrant capital or small and hashset storeg elemants unique not allow duplecit");
-            Console.WriteLine("\n=============\n");
-            HashSet<int> setA = [1, 2, 3, 4, 5];
-            HashSet<int> setB = [4, 5, 6, 7, 8];
-            Console.WriteLine("\n====== (setA)UnionWith(setB) =======\n");
-            HashSet<int> union = new(setA);
-            union.UnionWith(setB);
-            Console.Write("UnionWith:");
-            foreach(int u in union) { Console.Write($"{u} - "); }
-            Console.WriteLine("\n\n====== (setA)IntersectWith(setB) =======\n");
-            HashSet<int> inter = new(setA);
-            inter.IntersectWith(setB);
-            Console.Write("IntersectWith:");
-            foreach (int u in inter) { Console.Write($"{u} - "); }
-            Console.WriteLine("\n\n====== (setA)ExceptWith(setB) =======\n");
-            HashSet<int> except = new(setA);
-            except.ExceptWith(setB);
-            Console.Write("ExceptWith:");
-            foreach (int u in except) { Console.Write($"{u} - "); }
-            Console.WriteLine( );
-            HashSet<int> newNumpars = [1, 2];
-            Console.WriteLine("\n=============\n");
-            Console.WriteLine($"[1,2] is a subset of setA = {newNumpars.IsSubsetOf(setA)}");
+            //HashSet<string> email=new(StringComparer.OrdinalIgnoreCase);
+            //email.Add("ahmed@test.com");
+            //email.Add("AHMED@test.com");
+            //email.Add("sara@test.com");
+            //email.Add("Sara@Test.Com");
+            //Console.WriteLine("=============\n");
+            //Console.WriteLine(email.Count()); 
+            //Console.WriteLine("count = 2 becose (StringComparer.OrdinalIgnoreCase) must hashset not deffrant capital or small and hashset storeg elemants unique not allow duplecit");
+            //Console.WriteLine("\n=============\n");
+            //HashSet<int> setA = [1, 2, 3, 4, 5];
+            //HashSet<int> setB = [4, 5, 6, 7, 8];
+            //Console.WriteLine("\n====== (setA)UnionWith(setB) =======\n");
+            //HashSet<int> union = new(setA);
+            //union.UnionWith(setB);
+            //Console.Write("UnionWith:");
+            //foreach(int u in union) { Console.Write($"{u} - "); }
+            //Console.WriteLine("\n\n====== (setA)IntersectWith(setB) =======\n");
+            //HashSet<int> inter = new(setA);
+            //inter.IntersectWith(setB);
+            //Console.Write("IntersectWith:");
+            //foreach (int u in inter) { Console.Write($"{u} - "); }
+            //Console.WriteLine("\n\n====== (setA)ExceptWith(setB) =======\n");
+            //HashSet<int> except = new(setA);
+            //except.ExceptWith(setB);
+            //Console.Write("ExceptWith:");
+            //foreach (int u in except) { Console.Write($"{u} - "); }
+            //Console.WriteLine( );
+            //HashSet<int> newNumpars = [1, 2];
+            //Console.WriteLine("\n=============\n");
+            //Console.WriteLine($"[1,2] is a subset of setA = {newNumpars.IsSubsetOf(setA)}");
             #endregion
 
+            #region Exercise 5: Print Queue Simulator
+            Queue<string> printer = new();
+            printer.Enqueue("Report.pdf");
+            printer.Enqueue("Invoice.pdf");
+            printer.Enqueue("Letter.docx");
+            printer.Enqueue("Resume.pdf");
+            printer.Enqueue("Photo.jpg");
+            Console.WriteLine("==== print contents and Count ====\n");
+            foreach (var item in printer)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine($"Count= {printer.Count}");
+            Console.WriteLine("\n==== print next (without removing)  ====\n");
+            Console.WriteLine(printer.Peek());
+            Console.WriteLine("\n==== Process the queue  ====\n");
+            do
+            {
+                Console.WriteLine($"Printing: [{printer.Peek()}]");
+                printer.Dequeue();
+            }
+            while (printer.Capacity!=0);
+            Console.WriteLine("\n====  empty queue  ====\n");
+           // Exption error becose printer is empty compile not found elemant for Dequeue
+            #endregion
+
+            #region Exercise 6: Browser History (Undo)
+
+            #endregion
         }
     }
 }
