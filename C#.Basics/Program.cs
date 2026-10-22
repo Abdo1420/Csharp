@@ -49,6 +49,7 @@ namespace C_.Basics
             //foreach(string g in stringStudentGrades)
             //    Console.WriteLine(g);
 
+
             #endregion
 
             #region Exercise 2: Leaderboard
@@ -84,49 +85,82 @@ namespace C_.Basics
             #endregion
 
             #region Exercise 3: Phone Book
-            Console.WriteLine("==== Create phone book application ====\n");
-            Dictionary<string, string> phoneBook =new(4);
-            phoneBook["Ahmed"] = "75395147";
-            phoneBook["Abdo"] = "85295175";
-            phoneBook["Doha"] = "96374185";
-            phoneBook["Ali"] = "45698712";
-            Console.WriteLine("\n==== Add a new contact using [] syntax ====\n");
-            phoneBook["Salma"] = "35862478";
-            Console.WriteLine("\n==== Try adding a duplicate using .Add() ====\n");
-            try { phoneBook.Add("Ali", "45698712"); }
-            catch{
-                Console.WriteLine("This key already exists.");
-            }
-            Console.WriteLine("\n==== Try adding a duplicate using .TryAdd() ====\n");
-            if (phoneBook.TryAdd("Ahmed", "75395147"))
-                Console.WriteLine("Adding Sucssful..");
-            else
-                Console.WriteLine("The addition failed..");
-            Console.WriteLine("\n==== Search for a contact that doesn’t exist ====\n");
-            if (phoneBook.ContainsKey("Salma"))
-                Console.WriteLine($"The contact is found...");
-            else
-                Console.WriteLine("The contact not found...");
-            Console.WriteLine("\n==== Get a contact with a fallback of Not Found ====\n");
-            string? contact = phoneBook.GetValueOrDefault("Hany");
-            if(contact==null)
-                Console.WriteLine("Not Found...");
-            else
-                Console.WriteLine($"Salma :{phoneBook["Salma"]}");
-            Console.WriteLine("\n====  all Keys and all Values ====\n");
-            Console.Write($"Keys: ");
-            foreach (var item in phoneBook)
-            {
-                Console.Write($" {item.Key} - ");
-            }
-            Console.Write($"\nValues: ");
-            foreach (var item in phoneBook)
-            {
-                Console.Write($" {item.Value} - ");
-            }
-                
-              
-           
+            //Console.WriteLine("==== Create phone book application ====\n");
+            //Dictionary<string, string> phoneBook =new(4);
+            //phoneBook["Ahmed"] = "75395147";
+            //phoneBook["Abdo"] = "85295175";
+            //phoneBook["Doha"] = "96374185";
+            //phoneBook["Ali"] = "45698712";
+            //Console.WriteLine("\n==== Add a new contact using [] syntax ====\n");
+            //phoneBook["Salma"] = "35862478";
+            //Console.WriteLine("\n==== Try adding a duplicate using .Add() ====\n");
+            //try { phoneBook.Add("Ali", "45698712"); }
+            //catch{
+            //    Console.WriteLine("This key already exists.");
+            //}
+            //Console.WriteLine("\n==== Try adding a duplicate using .TryAdd() ====\n");
+            //if (phoneBook.TryAdd("Ahmed", "75395147"))
+            //    Console.WriteLine("Adding Sucssful..");
+            //else
+            //    Console.WriteLine("The addition failed..");
+            //Console.WriteLine("\n==== Search for a contact that doesn’t exist ====\n");
+            //if (phoneBook.ContainsKey("Salma"))
+            //    Console.WriteLine($"The contact is found...");
+            //else
+            //    Console.WriteLine("The contact not found...");
+            //Console.WriteLine("\n==== Get a contact with a fallback of Not Found ====\n");
+            //string? contact = phoneBook.GetValueOrDefault("Hany");
+            //if(contact==null)
+            //    Console.WriteLine("Not Found...");
+            //else
+            //    Console.WriteLine($"Salma :{phoneBook["Salma"]}");
+            //Console.WriteLine("\n====  all Keys and all Values ====\n");
+            //Console.Write($"Keys: ");
+            //foreach (var item in phoneBook)
+            //{
+            //    Console.Write($" {item.Key} - ");
+            //}
+            //Console.Write($"\nValues: ");
+            //foreach (var item in phoneBook)
+            //{
+            //    Console.Write($" {item.Value} - ");
+            //}
+
+
+
+            #endregion
+
+            #region Exercise 4: Unique Email Validator
+            HashSet<string> email=new(StringComparer.OrdinalIgnoreCase);
+            email.Add("ahmed@test.com");
+            email.Add("AHMED@test.com");
+            email.Add("sara@test.com");
+            email.Add("Sara@Test.Com");
+            Console.WriteLine("=============\n");
+            Console.WriteLine(email.Count()); 
+            Console.WriteLine("count = 2 becose (StringComparer.OrdinalIgnoreCase) must hashset not deffrant capital or small and hashset storeg elemants unique not allow duplecit");
+            Console.WriteLine("\n=============\n");
+            HashSet<int> setA = [1, 2, 3, 4, 5];
+            HashSet<int> setB = [4, 5, 6, 7, 8];
+            Console.WriteLine("\n====== (setA)UnionWith(setB) =======\n");
+            HashSet<int> union = new(setA);
+            union.UnionWith(setB);
+            Console.Write("UnionWith:");
+            foreach(int u in union) { Console.Write($"{u} - "); }
+            Console.WriteLine("\n\n====== (setA)IntersectWith(setB) =======\n");
+            HashSet<int> inter = new(setA);
+            inter.IntersectWith(setB);
+            Console.Write("IntersectWith:");
+            foreach (int u in inter) { Console.Write($"{u} - "); }
+            Console.WriteLine("\n\n====== (setA)ExceptWith(setB) =======\n");
+            HashSet<int> except = new(setA);
+            except.ExceptWith(setB);
+            Console.Write("ExceptWith:");
+            foreach (int u in except) { Console.Write($"{u} - "); }
+            Console.WriteLine( );
+            HashSet<int> newNumpars = [1, 2];
+            Console.WriteLine("\n=============\n");
+            Console.WriteLine($"[1,2] is a subset of setA = {newNumpars.IsSubsetOf(setA)}");
             #endregion
 
         }
