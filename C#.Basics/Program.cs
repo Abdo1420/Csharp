@@ -166,40 +166,60 @@ namespace C_.Basics
             #endregion
 
             #region Exercise 5: Print Queue Simulator
-            Queue<string> printer = new();
-            printer.Enqueue("Report.pdf");
-            printer.Enqueue("Invoice.pdf");
-            printer.Enqueue("Letter.docx");
-            printer.Enqueue("Resume.pdf");
-            printer.Enqueue("Photo.jpg");
-            Console.WriteLine("==== print contents and Count ====\n");
-            foreach (var item in printer)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine($"Count= {printer.Count}");
-            Console.WriteLine("\n==== print next (without removing)  ====\n");
-            Console.WriteLine(printer.Peek());
-            Console.WriteLine("\n==== Process the queue  ====\n");
-            do
-            {
-                Console.WriteLine($"Printing: [{printer.Peek()}]");
-                printer.Dequeue();
-            }
-            while (printer.Count!=0);
-            Console.WriteLine("\n==== TryDequeue  ====\n");
-            if(printer.TryDequeue(out string? result))//method TryDequeue is bool when queue empty return false and return defulte result
-            {
-                Console.WriteLine($"Result= {result}");
-            }
-            else
-            {
-                Console.WriteLine("Printer is empty...");
-            }
+            //Queue<string> printer = new();
+            //printer.Enqueue("Report.pdf");
+            //printer.Enqueue("Invoice.pdf");
+            //printer.Enqueue("Letter.docx");
+            //printer.Enqueue("Resume.pdf");
+            //printer.Enqueue("Photo.jpg");
+            //Console.WriteLine("==== print contents and Count ====\n");
+            //foreach (var item in printer)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine($"Count= {printer.Count}");
+            //Console.WriteLine("\n==== print next (without removing)  ====\n");
+            //Console.WriteLine(printer.Peek());
+            //Console.WriteLine("\n==== Process the queue  ====\n");
+            //do
+            //{
+            //    Console.WriteLine($"Printing: [{printer.Peek()}]");
+            //    printer.Dequeue();
+            //}
+            //while (printer.Count!=0);
+            //Console.WriteLine("\n==== TryDequeue  ====\n");
+            //if(printer.TryDequeue(out string? result))//method TryDequeue is bool when queue empty return false and return defulte result
+            //{
+            //    Console.WriteLine($"Result= {result}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Printer is empty...");
+            //}
             #endregion
 
             #region Exercise 6: Browser History (Undo)
-            
+            Stack<string> browserHistory = new();
+            browserHistory.Push("google.com");
+            browserHistory.Push("github.com");
+            browserHistory.Push("stackoverflow.com");
+            browserHistory.Push("youtube.com");
+            browserHistory.Push("claude.ai");
+            Console.WriteLine("==== top of stack ====\n");
+            Console.WriteLine(browserHistory.Peek());
+            Console.WriteLine("\n==== Press back 3 times ====\n");
+            browserHistory.Pop();
+            browserHistory.Pop();
+            browserHistory.Pop();
+            Console.WriteLine("\n==== the current page after going back ====\n");
+            Console.WriteLine(browserHistory.Peek());
+            Console.WriteLine("\n==== Try Pop  ====\n");
+            browserHistory.Clear();
+            if(browserHistory.TryPop(out string? result))//method TryPop is bool when Stack empty return false and return defulte result
+                Console.WriteLine($"Result= {result}");
+            else
+                Console.WriteLine("BrowserHistory is empty...");
+
 
             #endregion
         }
